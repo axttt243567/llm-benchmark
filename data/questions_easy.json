@@ -1,0 +1,242 @@
+[
+  {
+    "id": "EASY_LOGIC_001",
+    "domain": "Logic",
+    "category": "Basic Reasoning",
+    "difficulty": "easy",
+    "test_for": "Simple Deduction",
+    "prompt": "If all cats are animals, and Whiskers is a cat, what can we conclude about Whiskers?"
+  },
+  {
+    "id": "EASY_LOGIC_002",
+    "domain": "Logic",
+    "category": "Basic Reasoning",
+    "difficulty": "easy",
+    "test_for": "Simple Negation",
+    "prompt": "If it is NOT raining, and the streets are dry, is the statement 'It might be raining' true or false?"
+  },
+  {
+    "id": "EASY_LOGIC_003",
+    "domain": "Logic",
+    "category": "Basic Reasoning",
+    "difficulty": "easy",
+    "test_for": "Basic If-Then",
+    "prompt": "If you study hard, you will pass the exam. John studied hard. Did John pass the exam?"
+  },
+  {
+    "id": "EASY_MATH_001",
+    "domain": "Mathematics",
+    "category": "Basic Arithmetic",
+    "difficulty": "easy",
+    "test_for": "Addition",
+    "prompt": "What is 247 + 385?"
+  },
+  {
+    "id": "EASY_MATH_002",
+    "domain": "Mathematics",
+    "category": "Basic Arithmetic",
+    "difficulty": "easy",
+    "test_for": "Subtraction",
+    "prompt": "What is 1000 - 347?"
+  },
+  {
+    "id": "EASY_MATH_003",
+    "domain": "Mathematics",
+    "category": "Basic Arithmetic",
+    "difficulty": "easy",
+    "test_for": "Multiplication",
+    "prompt": "What is 25 × 12?"
+  },
+  {
+    "id": "EASY_MATH_004",
+    "domain": "Mathematics",
+    "category": "Basic Arithmetic",
+    "difficulty": "easy",
+    "test_for": "Division",
+    "prompt": "What is 144 ÷ 12?"
+  },
+  {
+    "id": "EASY_MATH_005",
+    "domain": "Mathematics",
+    "category": "Basic Arithmetic",
+    "difficulty": "easy",
+    "test_for": "Order of Operations",
+    "prompt": "Calculate: 5 + 3 × 2"
+  },
+  {
+    "id": "EASY_LANG_001",
+    "domain": "Language",
+    "category": "Comprehension",
+    "difficulty": "easy",
+    "test_for": "Simple Comprehension",
+    "prompt": "The dog chased the ball. The ball rolled under the couch. Where is the ball now?"
+  },
+  {
+    "id": "EASY_LANG_002",
+    "domain": "Language",
+    "category": "Comprehension",
+    "difficulty": "easy",
+    "test_for": "Synonym Recognition",
+    "prompt": "What is a word that means the same as 'happy'?"
+  },
+  {
+    "id": "EASY_LANG_003",
+    "domain": "Language",
+    "category": "Comprehension",
+    "difficulty": "easy",
+    "test_for": "Antonym Recognition",
+    "prompt": "What is the opposite of 'hot'?"
+  },
+  {
+    "id": "EASY_LANG_004",
+    "domain": "Language",
+    "category": "Grammar",
+    "difficulty": "easy",
+    "test_for": "Subject Identification",
+    "prompt": "In the sentence 'The cat sleeps on the mat', what is the subject?"
+  },
+  {
+    "id": "EASY_LANG_005",
+    "domain": "Language",
+    "category": "Grammar",
+    "difficulty": "easy",
+    "test_for": "Verb Identification",
+    "prompt": "In the sentence 'She runs every morning', what is the verb?"
+  },
+  {
+    "id": "EASY_KNOW_001",
+    "domain": "Knowledge",
+    "category": "General Facts",
+    "difficulty": "easy",
+    "test_for": "Basic Geography",
+    "prompt": "What is the capital of France?"
+  },
+  {
+    "id": "EASY_KNOW_002",
+    "domain": "Knowledge",
+    "category": "General Facts",
+    "difficulty": "easy",
+    "test_for": "Basic Science",
+    "prompt": "What planet is known as the Red Planet?"
+  },
+  {
+    "id": "EASY_KNOW_003",
+    "domain": "Knowledge",
+    "category": "General Facts",
+    "difficulty": "easy",
+    "test_for": "Basic History",
+    "prompt": "In which year did World War II end?"
+  },
+  {
+    "id": "EASY_KNOW_004",
+    "domain": "Knowledge",
+    "category": "General Facts",
+    "difficulty": "easy",
+    "test_for": "Basic Biology",
+    "prompt": "How many legs does a spider have?"
+  },
+  {
+    "id": "EASY_KNOW_005",
+    "domain": "Knowledge",
+    "category": "General Facts",
+    "difficulty": "easy",
+    "test_for": "Basic Chemistry",
+    "prompt": "What is the chemical symbol for water?"
+  },
+  {
+    "id": "EASY_REASON_001",
+    "domain": "Reasoning",
+    "category": "Pattern Recognition",
+    "difficulty": "easy",
+    "test_for": "Number Sequence",
+    "prompt": "What comes next in the sequence: 2, 4, 6, 8, ?"
+  },
+  {
+    "id": "EASY_REASON_002",
+    "domain": "Reasoning",
+    "category": "Pattern Recognition",
+    "difficulty": "easy",
+    "test_for": "Letter Sequence",
+    "prompt": "What comes next: A, C, E, G, ?"
+  },
+  {
+    "id": "EASY_REASON_003",
+    "domain": "Reasoning",
+    "category": "Comparison",
+    "difficulty": "easy",
+    "test_for": "Size Comparison",
+    "prompt": "Which is larger: an elephant or a mouse?"
+  },
+  {
+    "id": "EASY_REASON_004",
+    "domain": "Reasoning",
+    "category": "Comparison",
+    "difficulty": "easy",
+    "test_for": "Number Comparison",
+    "prompt": "Which number is greater: 0.5 or 0.25?"
+  },
+  {
+    "id": "EASY_REASON_005",
+    "domain": "Reasoning",
+    "category": "Classification",
+    "difficulty": "easy",
+    "test_for": "Category Identification",
+    "prompt": "Which one does not belong: apple, banana, carrot, orange?"
+  },
+  {
+    "id": "EASY_CODE_001",
+    "domain": "Programming",
+    "category": "Basic Concepts",
+    "difficulty": "easy",
+    "test_for": "Variable Understanding",
+    "prompt": "If x = 5 and y = 3, what is x + y?"
+  },
+  {
+    "id": "EASY_CODE_002",
+    "domain": "Programming",
+    "category": "Basic Concepts",
+    "difficulty": "easy",
+    "test_for": "Boolean Logic",
+    "prompt": "What is the result of: True AND False?"
+  },
+  {
+    "id": "EASY_CODE_003",
+    "domain": "Programming",
+    "category": "Basic Concepts",
+    "difficulty": "easy",
+    "test_for": "String Operation",
+    "prompt": "If we concatenate 'Hello' and 'World', what do we get?"
+  },
+  {
+    "id": "EASY_INSTRUCT_001",
+    "domain": "Instruction Following",
+    "category": "Simple Tasks",
+    "difficulty": "easy",
+    "test_for": "Counting",
+    "prompt": "Count from 1 to 5."
+  },
+  {
+    "id": "EASY_INSTRUCT_002",
+    "domain": "Instruction Following",
+    "category": "Simple Tasks",
+    "difficulty": "easy",
+    "test_for": "List Generation",
+    "prompt": "List three primary colors."
+  },
+  {
+    "id": "EASY_INSTRUCT_003",
+    "domain": "Instruction Following",
+    "category": "Simple Tasks",
+    "difficulty": "easy",
+    "test_for": "Format Following",
+    "prompt": "Say 'Hello' in uppercase letters only."
+  },
+  {
+    "id": "EASY_INSTRUCT_004",
+    "domain": "Instruction Following",
+    "category": "Simple Tasks",
+    "difficulty": "easy",
+    "test_for": "Word Reversal",
+    "prompt": "Reverse the word 'cat'."
+  }
+]
