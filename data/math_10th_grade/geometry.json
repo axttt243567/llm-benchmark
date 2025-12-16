@@ -1,0 +1,162 @@
+[
+  {
+    "id": "MATH_GEO_001",
+    "domain": "Mathematics",
+    "category": "Geometry",
+    "difficulty": "medium",
+    "test_for": "Triangle Properties",
+    "prompt": "In a triangle, one angle measures 45° and another measures 75°. What is the measure of the third angle? What type of triangle is this (acute, right, or obtuse)?"
+  },
+  {
+    "id": "MATH_GEO_002",
+    "domain": "Mathematics",
+    "category": "Geometry",
+    "difficulty": "medium",
+    "test_for": "Pythagorean Theorem",
+    "prompt": "A ladder is leaning against a wall. The foot of the ladder is 6 feet from the wall, and the ladder reaches 8 feet up the wall. How long is the ladder?"
+  },
+  {
+    "id": "MATH_GEO_003",
+    "domain": "Mathematics",
+    "category": "Geometry",
+    "difficulty": "hard",
+    "test_for": "Similar Triangles",
+    "prompt": "Two similar triangles have a ratio of corresponding sides of 3:5. If the perimeter of the smaller triangle is 36 cm, what is the perimeter of the larger triangle? If the area of the smaller triangle is 54 cm², what is the area of the larger triangle?"
+  },
+  {
+    "id": "MATH_GEO_004",
+    "domain": "Mathematics",
+    "category": "Geometry",
+    "difficulty": "medium",
+    "test_for": "Circle Properties",
+    "prompt": "A circle has a radius of 7 cm. Calculate: (a) the circumference, (b) the area, and (c) the length of an arc that subtends a central angle of 60°. Use π = 3.14159."
+  },
+  {
+    "id": "MATH_GEO_005",
+    "domain": "Mathematics",
+    "category": "Geometry",
+    "difficulty": "hard",
+    "test_for": "Trigonometric Ratios",
+    "prompt": "From a point on the ground 50 meters from the base of a building, the angle of elevation to the top of the building is 62°. Find the height of the building. (Use tan 62° ≈ 1.881)"
+  },
+  {
+    "id": "MATH_GEO_006",
+    "domain": "Mathematics",
+    "category": "Geometry",
+    "difficulty": "medium",
+    "test_for": "Coordinate Geometry",
+    "prompt": "Find the equation of the line that passes through the points (2, -3) and (5, 6). Express your answer in slope-intercept form (y = mx + b)."
+  },
+  {
+    "id": "MATH_GEO_007",
+    "domain": "Mathematics",
+    "category": "Geometry",
+    "difficulty": "hard",
+    "test_for": "Area of Composite Figures",
+    "prompt": "A rectangular garden measures 20m by 15m. A circular fountain with radius 3m is placed in the center. What is the area of the garden that can be planted? (Use π = 3.14)"
+  },
+  {
+    "id": "MATH_GEO_008",
+    "domain": "Mathematics",
+    "category": "Geometry",
+    "difficulty": "medium",
+    "test_for": "Volume Calculations",
+    "prompt": "A cylinder has a radius of 4 cm and a height of 10 cm. A cone with the same radius and height is removed from the top. What is the volume of the remaining solid? (Use π = 3.14)"
+  },
+  {
+    "id": "MATH_GEO_009",
+    "domain": "Mathematics",
+    "category": "Geometry",
+    "difficulty": "hard",
+    "test_for": "Congruence Proofs",
+    "prompt": "In triangle ABC, D is the midpoint of BC. If AD is perpendicular to BC and AB = AC = 13 cm while BC = 10 cm, find the length of AD. What property of isosceles triangles does this demonstrate?"
+  },
+  {
+    "id": "MATH_GEO_010",
+    "domain": "Mathematics",
+    "category": "Geometry",
+    "difficulty": "medium",
+    "test_for": "Parallel Lines and Transversals",
+    "prompt": "Two parallel lines are cut by a transversal. If one of the alternate interior angles measures (3x + 15)° and the other measures (5x - 25)°, find the value of x and the measure of these angles."
+  },
+  {
+    "id": "MATH_GEO_011",
+    "domain": "Mathematics",
+    "category": "Geometry",
+    "difficulty": "hard",
+    "test_for": "Law of Cosines",
+    "prompt": "In triangle ABC, side a = 8, side b = 11, and angle C = 40°. Find the length of side c. (Use cos 40° ≈ 0.766)"
+  },
+  {
+    "id": "MATH_GEO_012",
+    "domain": "Mathematics",
+    "category": "Geometry",
+    "difficulty": "medium",
+    "test_for": "Surface Area",
+    "prompt": "A rectangular prism has dimensions 5 cm × 8 cm × 12 cm. Calculate its total surface area."
+  },
+  {
+    "id": "MATH_GEO_013",
+    "domain": "Mathematics",
+    "category": "Geometry",
+    "difficulty": "hard",
+    "test_for": "Circle Theorems",
+    "prompt": "A chord of length 24 cm is 5 cm away from the center of a circle. Find the radius of the circle."
+  },
+  {
+    "id": "MATH_GEO_014",
+    "domain": "Mathematics",
+    "category": "Geometry",
+    "difficulty": "medium",
+    "test_for": "Polygon Angles",
+    "prompt": "Find the sum of the interior angles of a nonagon (9-sided polygon). What is the measure of each interior angle if the nonagon is regular?"
+  },
+  {
+    "id": "MATH_GEO_015",
+    "domain": "Mathematics",
+    "category": "Geometry",
+    "difficulty": "hard",
+    "test_for": "Coordinate Geometry Proofs",
+    "prompt": "Prove that the quadrilateral with vertices A(0, 0), B(4, 0), C(6, 3), and D(2, 3) is a parallelogram using the distance formula and/or slope calculations."
+  },
+  {
+    "id": "MATH_GEO_016",
+    "domain": "Mathematics",
+    "category": "Geometry",
+    "difficulty": "medium",
+    "test_for": "Transformations",
+    "prompt": "Triangle ABC has vertices A(1, 2), B(4, 2), and C(2, 5). If the triangle is rotated 90° counterclockwise about the origin, what are the new coordinates of the vertices?"
+  },
+  {
+    "id": "MATH_GEO_017",
+    "domain": "Mathematics",
+    "category": "Geometry",
+    "difficulty": "hard",
+    "test_for": "Inscribed and Central Angles",
+    "prompt": "In a circle, an inscribed angle intercepts an arc of 140°. What is the measure of the inscribed angle? If a central angle intercepts the same arc, what is its measure?"
+  },
+  {
+    "id": "MATH_GEO_018",
+    "domain": "Mathematics",
+    "category": "Geometry",
+    "difficulty": "medium",
+    "test_for": "Quadrilateral Properties",
+    "prompt": "The diagonals of a rhombus measure 16 cm and 12 cm. Find: (a) the area of the rhombus, and (b) the length of each side."
+  },
+  {
+    "id": "MATH_GEO_019",
+    "domain": "Mathematics",
+    "category": "Geometry",
+    "difficulty": "hard",
+    "test_for": "3D Geometry",
+    "prompt": "A sphere is inscribed in a cube of side length 10 cm. Find: (a) the radius of the sphere, (b) the volume of the sphere, and (c) the percentage of the cube's volume that is occupied by the sphere. (Use π = 3.14159)"
+  },
+  {
+    "id": "MATH_GEO_020",
+    "domain": "Mathematics",
+    "category": "Geometry",
+    "difficulty": "medium",
+    "test_for": "Distance and Midpoint",
+    "prompt": "Find the distance between points A(-3, 4) and B(5, -2). Also find the coordinates of the midpoint of segment AB."
+  }
+]

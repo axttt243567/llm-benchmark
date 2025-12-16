@@ -1,0 +1,162 @@
+[
+  {
+    "id": "CS_SOC_001",
+    "domain": "Common Sense",
+    "category": "Social Reasoning",
+    "difficulty": "medium",
+    "test_for": "Social Norms",
+    "prompt": "You're at a quiet library and your phone starts ringing loudly. What should you do and why?"
+  },
+  {
+    "id": "CS_SOC_002",
+    "domain": "Common Sense",
+    "category": "Social Reasoning",
+    "difficulty": "medium",
+    "test_for": "Emotional Intelligence",
+    "prompt": "Your friend just told you their grandmother passed away. They're crying. What would be an appropriate response, and what would be an inappropriate response?"
+  },
+  {
+    "id": "CS_SOC_003",
+    "domain": "Common Sense",
+    "category": "Social Reasoning",
+    "difficulty": "hard",
+    "test_for": "Reading Social Cues",
+    "prompt": "You're telling a long story at a dinner party. You notice that the listener keeps checking their phone, looking around the room, and giving short responses like 'uh-huh' and 'oh.' What might these behaviors indicate?"
+  },
+  {
+    "id": "CS_SOC_004",
+    "domain": "Common Sense",
+    "category": "Social Reasoning",
+    "difficulty": "medium",
+    "test_for": "Appropriate Context",
+    "prompt": "Would it be appropriate to wear a swimsuit to a job interview at a law firm? Why or why not?"
+  },
+  {
+    "id": "CS_SOC_005",
+    "domain": "Common Sense",
+    "category": "Social Reasoning",
+    "difficulty": "hard",
+    "test_for": "Intent vs Impact",
+    "prompt": "A coworker makes a joke that they find funny, but it offends another colleague from a different cultural background. The joke-teller says 'I didn't mean any harm.' Is the absence of harmful intent sufficient to address the situation? Explain."
+  },
+  {
+    "id": "CS_SOC_006",
+    "domain": "Common Sense",
+    "category": "Social Reasoning",
+    "difficulty": "medium",
+    "test_for": "Gift Giving Etiquette",
+    "prompt": "You're invited to a friend's birthday dinner. Should you bring a gift? If you can't afford an expensive gift, what alternatives are socially acceptable?"
+  },
+  {
+    "id": "CS_SOC_007",
+    "domain": "Common Sense",
+    "category": "Social Reasoning",
+    "difficulty": "hard",
+    "test_for": "Power Dynamics",
+    "prompt": "In a meeting, a senior manager interrupts a junior employee's presentation. Later, the junior employee privately tells you they found this disrespectful. They ask if they should confront the manager. What factors should they consider?"
+  },
+  {
+    "id": "CS_SOC_008",
+    "domain": "Common Sense",
+    "category": "Social Reasoning",
+    "difficulty": "medium",
+    "test_for": "Personal Boundaries",
+    "prompt": "A new acquaintance at a party asks how much money you make. You find this question uncomfortable. How might you politely redirect or decline to answer?"
+  },
+  {
+    "id": "CS_SOC_009",
+    "domain": "Common Sense",
+    "category": "Social Reasoning",
+    "difficulty": "hard",
+    "test_for": "Conflict Resolution",
+    "prompt": "Two of your friends are in a disagreement and each has separately asked you to 'take their side.' You value both friendships. How would you navigate this situation?"
+  },
+  {
+    "id": "CS_SOC_010",
+    "domain": "Common Sense",
+    "category": "Social Reasoning",
+    "difficulty": "medium",
+    "test_for": "White Lies",
+    "prompt": "A friend excitedly shows you a painting they just finished and asks if you like it. Honestly, you don't think it's very good. What do you say, and why might complete honesty not always be the best policy?"
+  },
+  {
+    "id": "CS_SOC_011",
+    "domain": "Common Sense",
+    "category": "Social Reasoning",
+    "difficulty": "hard",
+    "test_for": "Trust Building",
+    "prompt": "You're new to a team at work. What behaviors and actions over time would help you build trust with your colleagues? What behaviors might damage trust?"
+  },
+  {
+    "id": "CS_SOC_012",
+    "domain": "Common Sense",
+    "category": "Social Reasoning",
+    "difficulty": "medium",
+    "test_for": "Reciprocity Expectations",
+    "prompt": "A colleague helped you move apartments last weekend. This weekend, they ask you to help them paint their house, but you had planned to relax. What are the social expectations here? What would be a reasonable way to handle this?"
+  },
+  {
+    "id": "CS_SOC_013",
+    "domain": "Common Sense",
+    "category": "Social Reasoning",
+    "difficulty": "hard",
+    "test_for": "Interpreting Subtext",
+    "prompt": "Your roommate says 'It's fine, do whatever you want' in a flat tone after you ask if they mind you having friends over. What might they actually be communicating?"
+  },
+  {
+    "id": "CS_SOC_014",
+    "domain": "Common Sense",
+    "category": "Social Reasoning",
+    "difficulty": "medium",
+    "test_for": "Apologizing Properly",
+    "prompt": "What's the difference between saying 'I'm sorry you feel that way' and 'I'm sorry I hurt you' when apologizing? Which is more effective and why?"
+  },
+  {
+    "id": "CS_SOC_015",
+    "domain": "Common Sense",
+    "category": "Social Reasoning",
+    "difficulty": "hard",
+    "test_for": "Cultural Sensitivity",
+    "prompt": "You're hosting an international dinner party with guests from various countries and religious backgrounds. What considerations should you keep in mind when planning the menu?"
+  },
+  {
+    "id": "CS_SOC_016",
+    "domain": "Common Sense",
+    "category": "Social Reasoning",
+    "difficulty": "medium",
+    "test_for": "Queue Etiquette",
+    "prompt": "You've been waiting in a long line for 20 minutes. Someone approaches and asks if they can cut in front of you because they're 'in a hurry.' How would you respond, and what's the social reasoning behind line etiquette?"
+  },
+  {
+    "id": "CS_SOC_017",
+    "domain": "Common Sense",
+    "category": "Social Reasoning",
+    "difficulty": "hard",
+    "test_for": "Confidentiality",
+    "prompt": "A friend tells you a secret about themselves and asks you not to share it. Later, another friend asks you directly about this exact topic. How do you handle the situation while maintaining trust with both people?"
+  },
+  {
+    "id": "CS_SOC_018",
+    "domain": "Common Sense",
+    "category": "Social Reasoning",
+    "difficulty": "medium",
+    "test_for": "Professional Boundaries",
+    "prompt": "Your supervisor invites you to connect on a personal social media account where you post photos of your personal life. You'd prefer to keep work and personal life separate. How might you politely decline?"
+  },
+  {
+    "id": "CS_SOC_019",
+    "domain": "Common Sense",
+    "category": "Social Reasoning",
+    "difficulty": "hard",
+    "test_for": "Group Dynamics",
+    "prompt": "In a group project, one member isn't contributing but is happy to take credit for the group's work. Direct confrontation hasn't worked. What strategies might you use to address this?"
+  },
+  {
+    "id": "CS_SOC_020",
+    "domain": "Common Sense",
+    "category": "Social Reasoning",
+    "difficulty": "medium",
+    "test_for": "Gratitude Expression",
+    "prompt": "Someone gives you a gift you don't like or can't use. What is the appropriate immediate response? Is it ever acceptable to return, regift, or discard the item?"
+  }
+]

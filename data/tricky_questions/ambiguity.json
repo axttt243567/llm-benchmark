@@ -1,0 +1,162 @@
+[
+  {
+    "id": "TQ_AMB_001",
+    "domain": "Tricky Questions",
+    "category": "Ambiguity",
+    "difficulty": "medium",
+    "test_for": "Lexical Ambiguity",
+    "prompt": "The sentence 'I saw her duck' has multiple interpretations. List all possible meanings and explain the source of ambiguity."
+  },
+  {
+    "id": "TQ_AMB_002",
+    "domain": "Tricky Questions",
+    "category": "Ambiguity",
+    "difficulty": "hard",
+    "test_for": "Scope Ambiguity",
+    "prompt": "Analyze the sentence: 'Every student didn't pass the exam.' What are the two possible interpretations, and how does the scope of negation create this ambiguity?"
+  },
+  {
+    "id": "TQ_AMB_003",
+    "domain": "Tricky Questions",
+    "category": "Ambiguity",
+    "difficulty": "medium",
+    "test_for": "Referential Ambiguity",
+    "prompt": "In the sentence 'John told Mark that he was going to be promoted,' who is getting promoted? Explain the ambiguity and suggest a clearer way to express each interpretation."
+  },
+  {
+    "id": "TQ_AMB_004",
+    "domain": "Tricky Questions",
+    "category": "Ambiguity",
+    "difficulty": "hard",
+    "test_for": "Syntactic Ambiguity",
+    "prompt": "The headline reads: 'Police Help Dog Bite Victim.' Parse this sentence in two different ways to show how its structure creates ambiguity."
+  },
+  {
+    "id": "TQ_AMB_005",
+    "domain": "Tricky Questions",
+    "category": "Ambiguity",
+    "difficulty": "medium",
+    "test_for": "Temporal Ambiguity",
+    "prompt": "When someone says 'I'll meet you next Friday,' and today is Friday, do they mean in 7 days or in 8+ days (the Friday of next week)? Explain why this is ambiguous."
+  },
+  {
+    "id": "TQ_AMB_006",
+    "domain": "Tricky Questions",
+    "category": "Ambiguity",
+    "difficulty": "hard",
+    "test_for": "Quantifier Scope",
+    "prompt": "Interpret the sentence 'A representative from each company attended every meeting' in two ways. How many representatives and meetings could there be under each interpretation?"
+  },
+  {
+    "id": "TQ_AMB_007",
+    "domain": "Tricky Questions",
+    "category": "Ambiguity",
+    "difficulty": "medium",
+    "test_for": "Pragmatic Ambiguity",
+    "prompt": "A: 'Would you like some coffee?' B: 'Coffee would keep me awake.' Is B accepting or declining? What additional information would disambiguate this response?"
+  },
+  {
+    "id": "TQ_AMB_008",
+    "domain": "Tricky Questions",
+    "category": "Ambiguity",
+    "difficulty": "hard",
+    "test_for": "Attachment Ambiguity",
+    "prompt": "Analyze the sentence: 'The professor said on Monday he would give us an exam.' Does 'on Monday' modify when the professor said this, or when the exam will be given? How would you rewrite it to remove each ambiguity?"
+  },
+  {
+    "id": "TQ_AMB_009",
+    "domain": "Tricky Questions",
+    "category": "Ambiguity",
+    "difficulty": "medium",
+    "test_for": "Vagueness vs Ambiguity",
+    "prompt": "Compare these two sentences: 'John is tall' and 'John went to the bank.' One is vague and one is ambiguous. Which is which, and what's the difference between vagueness and ambiguity?"
+  },
+  {
+    "id": "TQ_AMB_010",
+    "domain": "Tricky Questions",
+    "category": "Ambiguity",
+    "difficulty": "hard",
+    "test_for": "Collective vs Distributive",
+    "prompt": "The statement 'The students carried the piano upstairs' is ambiguous. Explain the collective and distributive readings. Which is more plausible and why?"
+  },
+  {
+    "id": "TQ_AMB_011",
+    "domain": "Tricky Questions",
+    "category": "Ambiguity",
+    "difficulty": "medium",
+    "test_for": "Conjunction Ambiguity",
+    "prompt": "Parse the phrase 'old men and women' in two ways. What does each interpretation mean about who is old?"
+  },
+  {
+    "id": "TQ_AMB_012",
+    "domain": "Tricky Questions",
+    "category": "Ambiguity",
+    "difficulty": "hard",
+    "test_for": "De Re vs De Dicto",
+    "prompt": "John believes the richest person in town is unethical. Unknown to John, he himself is the richest person in town. Does John believe he himself is unethical? Explain the de re and de dicto interpretations."
+  },
+  {
+    "id": "TQ_AMB_013",
+    "domain": "Tricky Questions",
+    "category": "Ambiguity",
+    "difficulty": "medium",
+    "test_for": "Comparative Ambiguity",
+    "prompt": "The sentence 'Mary likes John more than Sue' has two meanings. What are they, and how would you disambiguate each?"
+  },
+  {
+    "id": "TQ_AMB_014",
+    "domain": "Tricky Questions",
+    "category": "Ambiguity",
+    "difficulty": "hard",
+    "test_for": "Presupposition Conflict",
+    "prompt": "Consider the statement: 'The king of France is bald.' If France has no king, is this statement true, false, or neither? Explain the philosophical positions on this classic example."
+  },
+  {
+    "id": "TQ_AMB_015",
+    "domain": "Tricky Questions",
+    "category": "Ambiguity",
+    "difficulty": "medium",
+    "test_for": "Ellipsis Resolution",
+    "prompt": "John voted for himself, and so did Mary. Did Mary vote for herself or for John? Explain why this elliptical construction is ambiguous."
+  },
+  {
+    "id": "TQ_AMB_016",
+    "domain": "Tricky Questions",
+    "category": "Ambiguity",
+    "difficulty": "hard",
+    "test_for": "Modal Ambiguity",
+    "prompt": "The statement 'You must not leave the building' is interpreted differently by American and British English speakers. What are the two interpretations of this modal construction?"
+  },
+  {
+    "id": "TQ_AMB_017",
+    "domain": "Tricky Questions",
+    "category": "Ambiguity",
+    "difficulty": "medium",
+    "test_for": "Genitive Ambiguity",
+    "prompt": "The phrase 'the picture of John' can mean different things. What are the possible interpretations, and how would you clarify each one?"
+  },
+  {
+    "id": "TQ_AMB_018",
+    "domain": "Tricky Questions",
+    "category": "Ambiguity",
+    "difficulty": "hard",
+    "test_for": "Negative Polarity Items",
+    "prompt": "Why does 'I didn't see any students' sound natural, but 'I saw any students' sounds wrong? What happens to meaning when we add 'yet': 'I haven't finished yet' vs the odd 'I have finished yet'?"
+  },
+  {
+    "id": "TQ_AMB_019",
+    "domain": "Tricky Questions",
+    "category": "Ambiguity",
+    "difficulty": "medium",
+    "test_for": "Speech Act Ambiguity",
+    "prompt": "When someone says 'Can you pass the salt?', they're technically asking about your ability. Why do we interpret this as a request? What's the difference between the literal and intended meaning?"
+  },
+  {
+    "id": "TQ_AMB_020",
+    "domain": "Tricky Questions",
+    "category": "Ambiguity",
+    "difficulty": "hard",
+    "test_for": "Donkey Sentence Analysis",
+    "prompt": "Analyze the sentence: 'Every farmer who owns a donkey beats it.' What is unusual about how 'it' refers to 'a donkey'? Why is this called a 'donkey sentence' in linguistics?"
+  }
+]

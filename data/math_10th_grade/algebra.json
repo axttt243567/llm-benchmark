@@ -1,0 +1,162 @@
+[
+  {
+    "id": "MATH_ALG_001",
+    "domain": "Mathematics",
+    "category": "Algebra",
+    "difficulty": "medium",
+    "test_for": "Linear Equations",
+    "prompt": "Solve for x: 3(2x - 5) + 4 = 2(x + 3) - 7. Show your work step by step."
+  },
+  {
+    "id": "MATH_ALG_002",
+    "domain": "Mathematics",
+    "category": "Algebra",
+    "difficulty": "medium",
+    "test_for": "Quadratic Equations",
+    "prompt": "Solve the quadratic equation: x² - 7x + 12 = 0. Find both solutions using factoring."
+  },
+  {
+    "id": "MATH_ALG_003",
+    "domain": "Mathematics",
+    "category": "Algebra",
+    "difficulty": "hard",
+    "test_for": "Systems of Equations",
+    "prompt": "Solve the system of equations:\n2x + 3y = 12\n4x - y = 5\nFind the values of x and y."
+  },
+  {
+    "id": "MATH_ALG_004",
+    "domain": "Mathematics",
+    "category": "Algebra",
+    "difficulty": "medium",
+    "test_for": "Polynomial Operations",
+    "prompt": "Simplify the expression: (2x³ - 5x² + 3x - 1) - (x³ + 2x² - 4x + 6)"
+  },
+  {
+    "id": "MATH_ALG_005",
+    "domain": "Mathematics",
+    "category": "Algebra",
+    "difficulty": "hard",
+    "test_for": "Quadratic Formula",
+    "prompt": "Use the quadratic formula to solve: 2x² + 5x - 3 = 0. Express your answer in simplest form."
+  },
+  {
+    "id": "MATH_ALG_006",
+    "domain": "Mathematics",
+    "category": "Algebra",
+    "difficulty": "medium",
+    "test_for": "Factoring",
+    "prompt": "Factor completely: 6x² + 11x - 10"
+  },
+  {
+    "id": "MATH_ALG_007",
+    "domain": "Mathematics",
+    "category": "Algebra",
+    "difficulty": "hard",
+    "test_for": "Rational Expressions",
+    "prompt": "Simplify the expression: (x² - 9)/(x² - x - 6) ÷ (x + 3)/(x - 3)"
+  },
+  {
+    "id": "MATH_ALG_008",
+    "domain": "Mathematics",
+    "category": "Algebra",
+    "difficulty": "medium",
+    "test_for": "Exponent Rules",
+    "prompt": "Simplify: (2x³y²)³ · (3x²y)² / (6x⁴y³)"
+  },
+  {
+    "id": "MATH_ALG_009",
+    "domain": "Mathematics",
+    "category": "Algebra",
+    "difficulty": "hard",
+    "test_for": "Radical Equations",
+    "prompt": "Solve for x: √(2x + 3) + 1 = x. Check your solution(s) for extraneous roots."
+  },
+  {
+    "id": "MATH_ALG_010",
+    "domain": "Mathematics",
+    "category": "Algebra",
+    "difficulty": "medium",
+    "test_for": "Inequalities",
+    "prompt": "Solve the inequality and express in interval notation: |2x - 5| < 7"
+  },
+  {
+    "id": "MATH_ALG_011",
+    "domain": "Mathematics",
+    "category": "Algebra",
+    "difficulty": "hard",
+    "test_for": "Word Problems",
+    "prompt": "A train leaves Station A traveling at 60 mph toward Station B. Two hours later, another train leaves Station B traveling at 80 mph toward Station A. If the stations are 280 miles apart, how long after the second train departs will they meet?"
+  },
+  {
+    "id": "MATH_ALG_012",
+    "domain": "Mathematics",
+    "category": "Algebra",
+    "difficulty": "medium",
+    "test_for": "Function Notation",
+    "prompt": "If f(x) = 3x² - 2x + 1 and g(x) = x + 4, find f(g(2)) and g(f(2))."
+  },
+  {
+    "id": "MATH_ALG_013",
+    "domain": "Mathematics",
+    "category": "Algebra",
+    "difficulty": "hard",
+    "test_for": "Logarithms",
+    "prompt": "Solve for x: log₂(x + 1) + log₂(x - 1) = 3"
+  },
+  {
+    "id": "MATH_ALG_014",
+    "domain": "Mathematics",
+    "category": "Algebra",
+    "difficulty": "medium",
+    "test_for": "Arithmetic Sequences",
+    "prompt": "In an arithmetic sequence, the 5th term is 23 and the 12th term is 51. Find the first term and the common difference."
+  },
+  {
+    "id": "MATH_ALG_015",
+    "domain": "Mathematics",
+    "category": "Algebra",
+    "difficulty": "hard",
+    "test_for": "Geometric Sequences",
+    "prompt": "Find the sum of the first 8 terms of a geometric sequence where the first term is 3 and the common ratio is 2."
+  },
+  {
+    "id": "MATH_ALG_016",
+    "domain": "Mathematics",
+    "category": "Algebra",
+    "difficulty": "medium",
+    "test_for": "Direct and Inverse Variation",
+    "prompt": "If y varies directly as x and inversely as z, and y = 12 when x = 8 and z = 2, find y when x = 15 and z = 5."
+  },
+  {
+    "id": "MATH_ALG_017",
+    "domain": "Mathematics",
+    "category": "Algebra",
+    "difficulty": "hard",
+    "test_for": "Complex Numbers",
+    "prompt": "Simplify: (3 + 2i)(4 - 5i) / (1 + i). Express your answer in the form a + bi."
+  },
+  {
+    "id": "MATH_ALG_018",
+    "domain": "Mathematics",
+    "category": "Algebra",
+    "difficulty": "medium",
+    "test_for": "Mixture Problems",
+    "prompt": "A chemist has 50 mL of a 30% acid solution. How many mL of a 70% acid solution must be added to create a 45% acid solution?"
+  },
+  {
+    "id": "MATH_ALG_019",
+    "domain": "Mathematics",
+    "category": "Algebra",
+    "difficulty": "hard",
+    "test_for": "Exponential Equations",
+    "prompt": "Solve for x: 3^(2x-1) = 27^(x+2) / 9^(x-1)"
+  },
+  {
+    "id": "MATH_ALG_020",
+    "domain": "Mathematics",
+    "category": "Algebra",
+    "difficulty": "medium",
+    "test_for": "Percent Change",
+    "prompt": "A store marks up an item by 40% from its wholesale price. Later, it offers a 25% discount on the marked price. If the final sale price is $84, what was the original wholesale price?"
+  }
+]

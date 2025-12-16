@@ -1,0 +1,162 @@
+[
+  {
+    "id": "TQ_TRAP_001",
+    "domain": "Tricky Questions",
+    "category": "Logical Traps",
+    "difficulty": "medium",
+    "test_for": "Misdirection Resistance",
+    "prompt": "A farmer has 17 sheep. All but 9 run away. How many sheep does the farmer have left?"
+  },
+  {
+    "id": "TQ_TRAP_002",
+    "domain": "Tricky Questions",
+    "category": "Logical Traps",
+    "difficulty": "medium",
+    "test_for": "Careful Reading",
+    "prompt": "If you have a bowl with six apples and you take away four, how many apples do you have?"
+  },
+  {
+    "id": "TQ_TRAP_003",
+    "domain": "Tricky Questions",
+    "category": "Logical Traps",
+    "difficulty": "hard",
+    "test_for": "False Premise Detection",
+    "prompt": "In a country where everyone must tell the truth, a man says 'I always lie.' What does this tell us about the country's rule?"
+  },
+  {
+    "id": "TQ_TRAP_004",
+    "domain": "Tricky Questions",
+    "category": "Logical Traps",
+    "difficulty": "medium",
+    "test_for": "Implicit Assumption Questioning",
+    "prompt": "A plane crashes exactly on the border between the United States and Canada. Where do they bury the survivors?"
+  },
+  {
+    "id": "TQ_TRAP_005",
+    "domain": "Tricky Questions",
+    "category": "Logical Traps",
+    "difficulty": "hard",
+    "test_for": "Recursive Logic",
+    "prompt": "Is the answer to this question 'no'?"
+  },
+  {
+    "id": "TQ_TRAP_006",
+    "domain": "Tricky Questions",
+    "category": "Logical Traps",
+    "difficulty": "medium",
+    "test_for": "Word Problem Attention",
+    "prompt": "A clerk at a butcher shop stands five feet ten inches tall and wears size 13 sneakers. What does he weigh?"
+  },
+  {
+    "id": "TQ_TRAP_007",
+    "domain": "Tricky Questions",
+    "category": "Logical Traps",
+    "difficulty": "hard",
+    "test_for": "Temporal Reasoning",
+    "prompt": "If tomorrow I said 'The day before yesterday was Saturday,' what day is today?"
+  },
+  {
+    "id": "TQ_TRAP_008",
+    "domain": "Tricky Questions",
+    "category": "Logical Traps",
+    "difficulty": "medium",
+    "test_for": "Quantity vs Identity",
+    "prompt": "I have two coins that add up to 30 cents. One of them is not a nickel. What are the two coins?"
+  },
+  {
+    "id": "TQ_TRAP_009",
+    "domain": "Tricky Questions",
+    "category": "Logical Traps",
+    "difficulty": "hard",
+    "test_for": "Causal Chain Analysis",
+    "prompt": "A woman shoots her husband, then holds him underwater for five minutes. Finally, she hangs him. But five minutes later, they both go out and enjoy a wonderful dinner together. How is this possible?"
+  },
+  {
+    "id": "TQ_TRAP_010",
+    "domain": "Tricky Questions",
+    "category": "Logical Traps",
+    "difficulty": "medium",
+    "test_for": "Division Trick",
+    "prompt": "How can you divide 10 by 2 and get a result of 6?"
+  },
+  {
+    "id": "TQ_TRAP_011",
+    "domain": "Tricky Questions",
+    "category": "Logical Traps",
+    "difficulty": "hard",
+    "test_for": "Self-Reference Paradox",
+    "prompt": "Statement A: 'Statement B is true.' Statement B: 'Statement A is false.' If Statement A is true, what can we conclude?"
+  },
+  {
+    "id": "TQ_TRAP_012",
+    "domain": "Tricky Questions",
+    "category": "Logical Traps",
+    "difficulty": "medium",
+    "test_for": "Literal Interpretation",
+    "prompt": "What can you hold in your right hand but never in your left hand?"
+  },
+  {
+    "id": "TQ_TRAP_013",
+    "domain": "Tricky Questions",
+    "category": "Logical Traps",
+    "difficulty": "hard",
+    "test_for": "Infinite Regression Detection",
+    "prompt": "If God is all-powerful, can God create a stone so heavy that even God cannot lift it? What does your answer imply about the concept of omnipotence?"
+  },
+  {
+    "id": "TQ_TRAP_014",
+    "domain": "Tricky Questions",
+    "category": "Logical Traps",
+    "difficulty": "medium",
+    "test_for": "Order of Operations Misdirection",
+    "prompt": "You enter a dark room with a match. There's a candle, a lamp, and a fireplace. Which do you light first?"
+  },
+  {
+    "id": "TQ_TRAP_015",
+    "domain": "Tricky Questions",
+    "category": "Logical Traps",
+    "difficulty": "hard",
+    "test_for": "Set Theory Paradox",
+    "prompt": "In a village, the barber shaves all those, and only those, who do not shave themselves. Does the barber shave himself?"
+  },
+  {
+    "id": "TQ_TRAP_016",
+    "domain": "Tricky Questions",
+    "category": "Logical Traps",
+    "difficulty": "medium",
+    "test_for": "Category Error Detection",
+    "prompt": "Which weighs more: a pound of feathers or a pound of bricks?"
+  },
+  {
+    "id": "TQ_TRAP_017",
+    "domain": "Tricky Questions",
+    "category": "Logical Traps",
+    "difficulty": "hard",
+    "test_for": "Necessary vs Sufficient Conditions",
+    "prompt": "All roses are flowers. Some flowers fade quickly. Therefore, some roses fade quickly. Is this argument logically valid? Explain why or why not."
+  },
+  {
+    "id": "TQ_TRAP_018",
+    "domain": "Tricky Questions",
+    "category": "Logical Traps",
+    "difficulty": "medium",
+    "test_for": "Negation Processing",
+    "prompt": "What is something you can never answer 'yes' to honestly?"
+  },
+  {
+    "id": "TQ_TRAP_019",
+    "domain": "Tricky Questions",
+    "category": "Logical Traps",
+    "difficulty": "hard",
+    "test_for": "Probablistic Reasoning Trap",
+    "prompt": "I have two children. One of them is a boy born on a Tuesday. What is the probability that I have two boys? (Assume equal probability of boy/girl and uniform distribution of birth days.)"
+  },
+  {
+    "id": "TQ_TRAP_020",
+    "domain": "Tricky Questions",
+    "category": "Logical Traps",
+    "difficulty": "medium",
+    "test_for": "Context Shift Awareness",
+    "prompt": "A man is looking at a photograph of someone. His friend asks who it is. The man replies, 'Brothers and sisters, I have none. But that man's father is my father's son.' Who is in the photograph?"
+  }
+]

@@ -22,27 +22,57 @@ PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
 DATA_DIR = os.path.join(PROJECT_ROOT, "data")
 RESULTS_DIR = os.path.join(PROJECT_ROOT, "results")
 
-# Available datasets
+# Available datasets - organized in category folders
 DATASETS = {
-    "easy": {
-        "file": "questions_easy.json",
-        "description": "Easy difficulty - Basic reasoning and knowledge",
-        "difficulty": "easy"
-    },
-    "medium": {
-        "file": "questions_medium.json", 
-        "description": "Medium difficulty - Logic, math, and analysis",
+    "long_context_retrieval": {
+        "file": "long_context/retrieval.json",
+        "description": "Long Context - Information retrieval and extraction",
         "difficulty": "medium"
     },
-    "long_context": {
-        "file": "questions_long_context_understanding.json",
-        "description": "Long Context Understanding - Retrieval, tracking, reasoning",
+    "long_context_narrative": {
+        "file": "long_context/narrative.json",
+        "description": "Long Context - Narrative comprehension and analysis",
         "difficulty": "hard"
     },
-    "full": {
-        "file": "questions.json",
-        "description": "Full dataset - Comprehensive test suite",
-        "difficulty": "mixed"
+    "tricky_logical": {
+        "file": "tricky_questions/logical_traps.json",
+        "description": "Tricky Questions - Logical traps and misdirection",
+        "difficulty": "medium"
+    },
+    "tricky_ambiguity": {
+        "file": "tricky_questions/ambiguity.json",
+        "description": "Tricky Questions - Linguistic ambiguity",
+        "difficulty": "hard"
+    },
+    "math_algebra": {
+        "file": "math_10th_grade/algebra.json",
+        "description": "10th Grade Math - Algebra problems",
+        "difficulty": "medium"
+    },
+    "math_geometry": {
+        "file": "math_10th_grade/geometry.json",
+        "description": "10th Grade Math - Geometry problems",
+        "difficulty": "medium"
+    },
+    "common_sense_everyday": {
+        "file": "common_sense/everyday.json",
+        "description": "Common Sense - Everyday reasoning",
+        "difficulty": "easy"
+    },
+    "common_sense_social": {
+        "file": "common_sense/social.json",
+        "description": "Common Sense - Social reasoning",
+        "difficulty": "medium"
+    },
+    "persona_characters": {
+        "file": "persona_roleplay/characters.json",
+        "description": "Persona Roleplay - Character adoption",
+        "difficulty": "medium"
+    },
+    "persona_scenarios": {
+        "file": "persona_roleplay/scenarios.json",
+        "description": "Persona Roleplay - Situational scenarios",
+        "difficulty": "hard"
     }
 }
 

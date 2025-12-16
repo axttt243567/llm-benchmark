@@ -1,0 +1,162 @@
+[
+  {
+    "id": "LC_NAR_001",
+    "domain": "Long Context Understanding",
+    "category": "Narrative Comprehension",
+    "difficulty": "medium",
+    "test_for": "Character Motivation Analysis",
+    "prompt": "Read the following story excerpt:\n\n[BEGIN STORY]\nElena had worked at the museum for fifteen years, carefully cataloging ancient artifacts with meticulous precision. When the new director, Mr. Hartwell, announced the museum would be selling several pieces to private collectors to fund renovations, Elena remained silent in the meeting. That night, she stayed late, photographing each artifact scheduled for sale. The next morning, she anonymously emailed the photos to three major newspapers along with the museum's internal valuation documents showing the pieces were being sold at a fraction of their worth. When questioned by the board, Elena denied any involvement. Mr. Hartwell resigned within the month, and the sales were canceled. Elena never told anyone what she had done, not even her husband of twenty years.\n[END STORY]\n\nQuestion: What motivated Elena's actions, and why do you think she chose to remain anonymous even after achieving her goal?"
+  },
+  {
+    "id": "LC_NAR_002",
+    "domain": "Long Context Understanding",
+    "category": "Narrative Comprehension",
+    "difficulty": "hard",
+    "test_for": "Theme Identification",
+    "prompt": "Read the following short story:\n\n[BEGIN STORY]\nThe old lighthouse keeper, Thomas, had lived alone on the rocky island for forty years. Every evening, he climbed the spiral staircase to light the lamp, watching ships pass safely in the distance. One winter, a young engineer arrived to install an automated system. \"Progress,\" she called it. Thomas showed her how to read the weather in the clouds, how to spot a struggling vessel before any sensor could. She documented everything in her notebook but installed the system anyway.\n\nOn her last night, a fierce storm struck. The automated system failed. Thomas climbed the stairs one final time, lighting the lamp by hand as he always had. In the morning, three fishing boats waited in the harbor, their crews waving thanks. The engineer found Thomas slumped against the lamp, his hand still on the switch. She removed the automated system herself and requested a transfer to the island. The notebook became her guide.\n[END STORY]\n\nQuestion: Identify at least three themes present in this story and explain how they are developed through the narrative."
+  },
+  {
+    "id": "LC_NAR_003",
+    "domain": "Long Context Understanding",
+    "category": "Narrative Comprehension",
+    "difficulty": "medium",
+    "test_for": "Plot Structure Analysis",
+    "prompt": "Read the following story:\n\n[BEGIN STORY]\nMaya discovered the envelope tucked behind her grandmother's portrait a week after the funeral. Inside was a map and a letter explaining that her grandmother had buried a time capsule in 1955, the year she immigrated from Poland. Maya followed the map to an old oak tree in the city park, now surrounded by office buildings. She obtained permission from the city and began to dig.\n\nThree feet down, her shovel struck metal. Inside the rusted box, she found photographs of family members she'd never known, letters in Polish, a locket, and a sealed envelope addressed to \"My Future Grandchild.\" The letter inside revealed that her grandmother had a sister who stayed behind in Poland. The sister's descendants might still be alive.\n\nMaya spent months researching, finally connecting with a cousin in Warsaw through DNA testing. They video-called for hours, sharing stories. Her cousin had a matching locket, passed down through generations. They made plans to meet in person. Maya realized her grandmother had given her not buried treasure, but buried roots.\n[END STORY]\n\nQuestion: Identify the exposition, rising action, climax, falling action, and resolution in this story."
+  },
+  {
+    "id": "LC_NAR_004",
+    "domain": "Long Context Understanding",
+    "category": "Narrative Comprehension",
+    "difficulty": "hard",
+    "test_for": "Unreliable Narrator Detection",
+    "prompt": "Read the following first-person account:\n\n[BEGIN ACCOUNT]\nI was the best employee TechStart ever had. When I joined as a junior developer, the company was failing. Within a year, I had single-handedly turned things around with my revolutionary code. Sure, some people on the team claimed they contributed, but they were just jealous of my success.\n\nThe CEO, Mark, was threatened by my talent. That's why he passed me over for promotion three times. He claimed it was because of \"team collaboration issues,\" but everyone knows the real reason. My colleagues stopped inviting me to lunch, probably because they couldn't handle being around someone so much smarter than them.\n\nWhen I was eventually let go, it was clearly because Mark couldn't handle having someone more competent than him. The exit interview mentioned \"repeated conflicts with team members\" and \"inability to accept feedback,\" but that's just corporate speak for \"too talented.\" I've already started my own company. They'll all see.\n[END ACCOUNT]\n\nQuestion: What evidence in the text suggests the narrator may be unreliable? What might the actual situation have been based on the details provided?"
+  },
+  {
+    "id": "LC_NAR_005",
+    "domain": "Long Context Understanding",
+    "category": "Narrative Comprehension",
+    "difficulty": "medium",
+    "test_for": "Foreshadowing Recognition",
+    "prompt": "Read the following story opening:\n\n[BEGIN STORY]\nThe morning Sarah left for her solo hiking trip, her coffee cup cracked right down the middle, spilling everywhere. Her mother called it an omen, but Sarah laughed it off. She noticed her compass needle seemed sluggish, sticking occasionally, but the weather forecast was perfect—clear skies for the next five days.\n\nAt the trailhead, she met an old ranger who studied her map. \"That route passes Devil's Crossing,\" he said slowly. \"Haven't had trouble there in years, but my joints are aching something fierce today.\" Sarah thanked him and started up the trail, ignoring how her dog, left at home, had howled as she drove away.\n\nThe first two days were uneventful. On the third morning, Sarah woke to an odd stillness. No birds sang. The stream near her campsite, rushing loudly the night before, had fallen to a trickle. She packed up and continued toward Devil's Crossing.\n[END STORY]\n\nQuestion: Identify all instances of foreshadowing in this passage and explain what they might be predicting."
+  },
+  {
+    "id": "LC_NAR_006",
+    "domain": "Long Context Understanding",
+    "category": "Narrative Comprehension",
+    "difficulty": "hard",
+    "test_for": "Symbolic Interpretation",
+    "prompt": "Read the following story:\n\n[BEGIN STORY]\nThe garden had been dying slowly since Father left. Each month, another section surrendered to weeds. Mother said she was too tired to tend it, but Maria noticed she never walked that way anymore, averting her eyes from the window that overlooked the roses Father had planted on their wedding day.\n\nOn the anniversary of his departure, Maria woke before dawn. She found gardening gloves in the shed, stiff from disuse. By noon, she had cleared the wedding roses, revealing three stubborn buds that had survived the neglect. She left the gloves on the kitchen table.\n\nThat evening, Mother stood at the window for the first time in a year. The next morning, Maria found her in the garden, wearing the gloves, clearing another section. They worked in silence, side by side. By summer's end, the garden had returned, though different—new flowers alongside the old roses, paths rerouted, a bench where the broken fountain had been.\n\nFather never came back. But in spring, Mother planted a new tree by the gate, something she said she'd always wanted but Father hadn't liked. Maria helped her dig the hole.\n[END STORY]\n\nQuestion: What does the garden symbolize in this story, and how does its transformation parallel the emotional journey of the characters?"
+  },
+  {
+    "id": "LC_NAR_007",
+    "domain": "Long Context Understanding",
+    "category": "Narrative Comprehension",
+    "difficulty": "medium",
+    "test_for": "Point of View Analysis",
+    "prompt": "Read the following three versions of the same event:\n\n[VERSION A - Third Person Limited (Tom's perspective)]\nTom watched Jenny cross the cafeteria, his heart pounding. She sat at his table without asking, which he found presumptuous. When she asked to borrow his notes, he assumed she was using him. He handed them over anyway, too awkward to refuse.\n\n[VERSION B - Third Person Limited (Jenny's perspective)]\nJenny spotted Tom sitting alone and felt a pang of sympathy. She'd seen him struggling in class and wondered if he needed a study partner. She sat down, hoping to make a friend. When she asked about his notes, she noticed him stiffen. He silently handed them over, clearly annoyed. She wondered what she'd done wrong.\n\n[VERSION C - Third Person Omniscient]\nTom watched Jenny approach, his heart pounding—not from fear, but from a crush he'd harbored since September. Jenny saw a lonely classmate and wanted to help. When she sat down, Tom assumed the worst; Jenny felt only kindness. She asked for notes to start a conversation. He interpreted it as exploitation. Two people, same moment, completely missing each other.\n\nQuestion: How does the choice of point of view change the reader's understanding of the characters and their interaction?"
+  },
+  {
+    "id": "LC_NAR_008",
+    "domain": "Long Context Understanding",
+    "category": "Narrative Comprehension",
+    "difficulty": "hard",
+    "test_for": "Subtext and Implication",
+    "prompt": "Read the following dialogue-heavy scene:\n\n[BEGIN SCENE]\nMargaret set down her teacup with unusual precision. \"So. David's been promoted.\"\n\n\"Yes,\" her daughter Claire replied, not looking up from her phone. \"Regional manager.\"\n\n\"After only two years. Impressive.\"\n\n\"Mm-hmm.\"\n\n\"I suppose you'll be moving, then. Closer to his new office.\"\n\n\"We're discussing it.\"\n\n\"Of course you are.\" Margaret stirred her tea, though she'd added nothing to it. \"The schools are better there, I've heard.\"\n\nClaire finally looked up. \"We don't have children, Mother.\"\n\n\"Not yet.\" A pause. \"More tea?\"\n\n\"I should go. David's waiting.\"\n\n\"Yes, I imagine he is.\" Margaret watched her daughter gather her coat. \"Give him my congratulations.\"\n\n\"I will.\"\n\n\"And Claire?\" Her daughter stopped at the door. \"Do call more often. If you can find the time.\"\n\n\"I always find the time.\"\n\n\"Yes,\" Margaret said softly to the closing door. \"I know.\"\n[END SCENE]\n\nQuestion: What unspoken tensions and feelings exist between Margaret and Claire? What is the subtext of their conversation about the promotion?"
+  },
+  {
+    "id": "LC_NAR_009",
+    "domain": "Long Context Understanding",
+    "category": "Narrative Comprehension",
+    "difficulty": "medium",
+    "test_for": "Conflict Identification",
+    "prompt": "Read the following story:\n\n[BEGIN STORY]\nDr. Amara Okonkwo had spent twenty years developing a vaccine for a rare tropical disease. Her research, conducted at a small university in Nigeria, was finally showing results. Then PharmaCorp called. They offered funding to complete her trials—in exchange for exclusive patent rights.\n\nWithout the funding, her research would stall for years. With it, the vaccine would exist but cost $500 per dose, unaffordable for the communities most affected. Her colleague urged her to take the money: \"A expensive vaccine saves more lives than no vaccine.\"\n\nHer sister, a doctor in a rural clinic, saw it differently: \"You'll create something our people can never use. It will save wealthy tourists while our children die.\"\n\nAmara's grant applications had been rejected seven times. Her lab equipment was failing. Three of her researchers had left for better-paying positions abroad. She opened PharmaCorp's email again, cursor hovering over the reply button.\n[END STORY]\n\nQuestion: Identify all the types of conflict present in this story (person vs. person, person vs. society, person vs. self, etc.) and provide specific examples of each."
+  },
+  {
+    "id": "LC_NAR_010",
+    "domain": "Long Context Understanding",
+    "category": "Narrative Comprehension",
+    "difficulty": "hard",
+    "test_for": "Tone and Mood Analysis",
+    "prompt": "Read the following two descriptions of the same setting:\n\n[PASSAGE A]\nThe old house stood at the end of Maple Street, its windows catching the afternoon sun like golden mirrors. Wildflowers had claimed the untended garden, creating a riot of purple and yellow that swayed in the warm breeze. A tire swing still hung from the oak tree, twisting lazily. Paint peeled from the porch rails in long curls, and a family of sparrows had built a nest in the mailbox. The for-sale sign had been there so long it had become part of the landscape, weathered but patient.\n\n[PASSAGE B]\nThe old house loomed at the end of Maple Street, its windows like empty eyes staring blankly. Weeds had choked whatever garden once existed, their brown stalks rattling in the cold wind. A tire swing hung from a dead oak branch, its rope frayed nearly through. Paint peeled from the porch like diseased skin, and something had torn the mailbox from its post. The for-sale sign tilted at a broken angle, forgotten. No one could remember the last time anyone had inquired.\n\nQuestion: Analyze how word choice, imagery, and descriptive details create completely different tones and moods in these two passages. What emotions does each evoke?"
+  },
+  {
+    "id": "LC_NAR_011",
+    "domain": "Long Context Understanding",
+    "category": "Narrative Comprehension",
+    "difficulty": "medium",
+    "test_for": "Character Arc Tracking",
+    "prompt": "Read the following condensed character study:\n\n[BEGIN CHARACTER STUDY]\nAt twelve, Marcus believed the world owed him nothing. His foster homes had taught him that much. He stole what he needed, trusted no one, and slept with his shoes on in case he needed to run.\n\nAt sixteen, he met Coach Davis, who let him stay after school to shoot hoops. When Marcus stole money from the gym office, Coach didn't call the police. He just said, \"I expected better from you,\" and walked away. Marcus returned the money that night.\n\nAt twenty, Marcus was attending community college on a basketball scholarship. He tutored younger kids at the youth center where Coach Davis now worked. He still sometimes checked the exits when entering a room, but his shoes came off when he got home to his small apartment.\n\nAt twenty-five, Marcus became a social worker. His first case was a twelve-year-old boy who stole, trusted no one, and slept with his shoes on. \"I know,\" Marcus told him. \"I know exactly.\"\n[END CHARACTER STUDY]\n\nQuestion: Trace Marcus's character arc through the story. What are the key turning points, and what internal and external changes does he undergo?"
+  },
+  {
+    "id": "LC_NAR_012",
+    "domain": "Long Context Understanding",
+    "category": "Narrative Comprehension",
+    "difficulty": "hard",
+    "test_for": "Narrative Gap Filling",
+    "prompt": "Read the following story with an implied gap:\n\n[BEGIN STORY]\nMay 15, 2019\nDear Diary,\nStarted my new job at the restaurant today. The head chef, Roberto, seems strict but fair. I'm the youngest in the kitchen by ten years. Burned the hollandaise twice. Roberto didn't yell, just showed me again. \"Everyone burns it twice,\" he said.\n\nSeptember 3, 2019\nDear Diary,\nRoberto put me in charge of the appetizer station for the first time. My hands shook all night. After close, he said, \"You're ready.\" I don't know if I am.\n\n[GAP]\n\nMarch 20, 2024\nDear Diary,\nWe buried Roberto today. Half the city's chefs came. His wife gave me his knife roll. \"He wanted you to have it,\" she said. \"He always said you were the one who understood.\" Tomorrow I take over as head chef. I'm terrified. But I won't burn the hollandaise.\n[END STORY]\n\nQuestion: Based on the context clues in the entries before and after the gap, what likely happened during those five years? Describe the relationship that probably developed between the narrator and Roberto."
+  },
+  {
+    "id": "LC_NAR_013",
+    "domain": "Long Context Understanding",
+    "category": "Narrative Comprehension",
+    "difficulty": "medium",
+    "test_for": "Setting Impact on Plot",
+    "prompt": "Read the following story:\n\n[BEGIN STORY]\nThe research station at McMurdo Sound, Antarctica, housed twelve scientists during the winter months. Once the last supply plane departed in March, they were alone until October—no evacuation possible in the permanent darkness and lethal cold.\n\nIn June, Dr. Chen discovered the medical supplies had been contaminated. Antibiotics, painkillers, even basic first-aid materials—all useless. Someone had done it deliberately, though no one would admit why.\n\nDr. Yates, the station leader, faced an impossible choice. Confine everyone to quarters and let paranoia grow? Continue normal operations and risk the saboteur striking again? The radio could reach the outside world, but no help could arrive for four months.\n\nThat night, Dr. Morrison developed appendicitis symptoms. Without antibiotics, infection would likely be fatal. Without surgery, rupture was certain. Dr. Chen was a molecular biologist, not a surgeon. The only person with surgical training was Dr. Yates herself—and one other person: whoever had contaminated the supplies.\n[END STORY]\n\nQuestion: How does the Antarctic setting create unique constraints that drive the plot? How would the story change if set in a different isolated location?"
+  },
+  {
+    "id": "LC_NAR_014",
+    "domain": "Long Context Understanding",
+    "category": "Narrative Comprehension",
+    "difficulty": "hard",
+    "test_for": "Parallel Narrative Analysis",
+    "prompt": "Read the following intercut narrative:\n\n[BEGIN STORY]\n1985:\nAnna clutched the letter of acceptance to Juilliard. Her father shook his head. \"Music doesn't pay bills. I forbid it.\" That night, she packed a single bag. She was seventeen.\n\n2015:\nMargot clutched the letter of acceptance to MIT. Her mother smiled. \"Computer science? My practical girl.\" Margot nodded, wondering if she should mention the poetry notebooks under her bed. She was seventeen.\n\n1990:\nAnna played violin in subway stations, teaching lessons between auditions. Her father hadn't spoken to her in five years. Some nights she wondered if he was right.\n\n2020:\nMargot had graduated top of her class. She was a software engineer, salary six figures. She wrote poems on her lunch break, showed them to no one. Her published code had 10,000 users. Her unpublished poems, three hundred pages.\n\n2015:\nAnna played principal violin with the Chicago Symphony. After the concert, a old man waited at the stage door. Her father, eighty now, held a concert program. \"I've come to every one for ten years,\" he said. \"I was wrong.\"\n\n2025:\nMargot quit her job, enrolled in an MFA program. Her mother stopped calling for three months. At her first poetry reading, Margot noticed a woman in the back row with her mother's face, though her mother had said she wouldn't come.\n[END STORY]\n\nQuestion: How do the parallel narratives of Anna and Margot comment on each other? What themes emerge from their juxtaposition?"
+  },
+  {
+    "id": "LC_NAR_015",
+    "domain": "Long Context Understanding",
+    "category": "Narrative Comprehension",
+    "difficulty": "medium",
+    "test_for": "Irony Recognition",
+    "prompt": "Read the following story:\n\n[BEGIN STORY]\nMr. Henderson was the neighborhood's most vigilant citizen. He attended every town council meeting, reported every code violation, and maintained a detailed log of suspicious vehicles. \"Someone has to keep this community safe,\" he told anyone who would listen.\n\nWhen packages began disappearing from porches, Mr. Henderson installed six security cameras, organized a neighborhood patrol, and printed 500 flyers about the \"porch pirate epidemic.\" He was interviewed by the local news.\n\nThe police eventually caught the thief through DNA evidence on discarded packaging. It was Mr. Henderson's own nephew, Trevor, who had been staying with him for the past month while \"getting back on his feet.\" Trevor had been using Mr. Henderson's garage to store the stolen goods.\n\nAt the town council meeting following the arrest, Mr. Henderson proposed stricter background checks for house guests. The motion failed, 8 to 1.\n[END STORY]\n\nQuestion: Identify the different types of irony (dramatic, situational, verbal) present in this story and explain how each functions to create meaning or humor."
+  },
+  {
+    "id": "LC_NAR_016",
+    "domain": "Long Context Understanding",
+    "category": "Narrative Comprehension",
+    "difficulty": "hard",
+    "test_for": "Epiphany Detection",
+    "prompt": "Read the following story:\n\n[BEGIN STORY]\nFor thirty years, Professor Wells had taught the same Shakespeare course. Same readings, same lectures, same midterm essay: \"Discuss Hamlet's tragic flaw.\" He could recite his lectures from memory. Some years he wondered if he already had.\n\nIn his final semester before retirement, a student named James asked during office hours: \"Do you actually like Hamlet? You seem kind of... bored by it.\"\n\nProfessor Wells prepared to deliver his standard response about scholarly appreciation versus personal enjoyment. Instead, he stopped. Did he like Hamlet? He remembered discovering it at nineteen, how it had set his mind on fire. He remembered choosing academia to spend his life with these words.\n\nHe looked at his bookshelf: thirty years of published papers, citations, conference presentations. All about Hamlet. Not one of them mentioned why a nineteen-year-old boy had fallen in love with a four-hundred-year-old play.\n\n\"I don't know anymore,\" he told James. \"I genuinely don't know.\"\n\nProfessor Wells canceled his remaining lectures. He read Hamlet again that night, for the first time in years reading it instead of teaching it. At 2 AM, he cried. The next morning, he asked the dean to postpone his retirement by one year. \"I finally have something new to say.\"\n[END STORY]\n\nQuestion: Where does Professor Wells's epiphany occur, what triggers it, and what realization does he come to about his relationship with his work?"
+  },
+  {
+    "id": "LC_NAR_017",
+    "domain": "Long Context Understanding",
+    "category": "Narrative Comprehension",
+    "difficulty": "medium",
+    "test_for": "Cultural Context Understanding",
+    "prompt": "Read the following story:\n\n[BEGIN STORY]\nGrandmother Mei had bound feet, tiny and twisted, a remnant of the old China. She never complained about the pain, though she walked slowly and could not climb stairs. In the new apartment building in San Francisco, she remained on the ground floor while the family gathered above.\n\nHer granddaughter Jenny, born American, once asked about the feet. \"They did this so you would be beautiful?\" Grandmother Mei had smiled strangely. \"They did this so I would marry well. I did marry well. Your grandfather was a good man.\"\n\nJenny, sixteen and wearing running shoes, had a thousand questions. But grandmother only said, \"Different time. Different country. Different life. You run, little one. You run wherever you want.\"\n\nAt grandmother's funeral, Jenny wore heels for the first time. They hurt. By the end of the service, she had taken them off. She walked barefoot to the car, carrying the shoes.\n\n\"Grandmother would not approve,\" her mother said.\n\nJenny thought about tiny, twisted feet and pain never mentioned. \"I think she'd understand.\"\n[END STORY]\n\nQuestion: How does the story explore the contrast between cultural contexts and generations? What does the symbolism of different footwear represent?"
+  },
+  {
+    "id": "LC_NAR_018",
+    "domain": "Long Context Understanding",
+    "category": "Narrative Comprehension",
+    "difficulty": "hard",
+    "test_for": "Moral Ambiguity Analysis",
+    "prompt": "Read the following story:\n\n[BEGIN STORY]\nThe hospital had one ventilator and two dying patients. Mrs. Obi, 78, had COVID-19 and underlying conditions. Without the ventilator, she had hours to live. Mr. Park, 42, had been in a car accident. Without the ventilator, he also had hours to live.\n\nDr. Reyes reviewed the charts. Mrs. Obi: retired teacher, widow, three adult children, eight grandchildren. Mr. Park: software engineer, single, no children, estranged from his only family. The algorithm the hospital used for triage said Mr. Park's survival chances were higher.\n\nMrs. Obi's daughter found Dr. Reyes in the hallway. \"Please,\" she said. \"My children need their grandmother.\" Later, a man Dr. Reyes didn't recognize stopped her. \"I'm Mr. Park's roommate,\" he said. \"I know he seems alone, but he's my whole world. He's the only family I have.\"\n\nDr. Reyes assigned the ventilator based on the algorithm. She followed protocol. She made the correct medical decision. Mr. Park survived. He sent Dr. Reyes a letter every year on the anniversary, thanking her.\n\nShe never opened them.\n[END STORY]\n\nQuestion: Why does Dr. Reyes never open the letters? Analyze the moral complexity of the situation and the different ethical frameworks that could apply to her decision."
+  },
+  {
+    "id": "LC_NAR_019",
+    "domain": "Long Context Understanding",
+    "category": "Narrative Comprehension",
+    "difficulty": "medium",
+    "test_for": "Flash Forward Interpretation",
+    "prompt": "Read the following story:\n\n[BEGIN STORY]\nPresent Day:\nMia stood outside the bakery, watching her daughter Emma, now 8, press her nose against the glass. \"Can we go in, Mommy?\" The bell above the door still chimed the same way.\n\nTen Years Ago:\nMia had worked the counter of this bakery every summer during college. Mr. Russo taught her to pipe roses. Mrs. Russo slipped extra cookies into her lunch bag. When Mia's mother died, they closed the shop for her funeral. \"You're family,\" Mr. Russo had said.\n\nFive Years Ago:\nMia moved away for work. She promised to visit. She didn't. The Russos sent Christmas cards. She forgot to send them back. She heard Mr. Russo had a stroke. She meant to call.\n\nPresent Day:\nMrs. Russo was behind the counter, older now, moving slowly. She looked up at the chiming bell. A flicker of recognition, then something closing behind her eyes. \"Can I help you?\"\n\nMia wanted to explain, to apologize for five years of silence. Instead she said, \"A dozen sugar cookies, please.\"\n\nMrs. Russo nodded politely at the stranger and reached for a box.\n[END STORY]\n\nQuestion: What has Mia lost, and why? How does the non-linear narrative structure enhance the emotional impact of the ending?"
+  },
+  {
+    "id": "LC_NAR_020",
+    "domain": "Long Context Understanding",
+    "category": "Narrative Comprehension",
+    "difficulty": "hard",
+    "test_for": "Resolution Evaluation",
+    "prompt": "Read the following story:\n\n[BEGIN STORY]\nThe brothers had not spoken since their mother's funeral, five years ago. A dispute over the inheritance—not about money, really, but about who she had loved more, though neither would admit it.\n\nDaniel got the house. Matthew got the accusations: \"You never visited. You don't deserve anything.\" Matthew responded with silence, then absence. They lived twelve miles apart and might as well have been on different planets.\n\nWhen Daniel's son was born, Matthew sent a card. No response. When Matthew's wife died, Daniel sent flowers. No acknowledgment. Small gestures across an unbridgeable gap.\n\nThen Daniel got sick. Terminal, the doctors said. Months, not years.\n\nMatthew came to the hospital. They sat in silence for an hour. Finally, Daniel spoke: \"I don't forgive you.\"\n\nMatthew nodded. \"I don't forgive you either.\"\n\nAnother silence.\n\n\"But I'm here,\" Matthew said.\n\n\"I know,\" Daniel replied.\n\nMatthew came every day for three months. They rarely spoke of the past. They watched baseball, complained about hospital food, sometimes sat in silence. The night Daniel died, Matthew was holding his hand.\n\nAt the funeral, Daniel's son asked Matthew if the brothers had finally made peace.\n\n\"No,\" Matthew said. \"Something else. I don't know what to call it.\"\n[END STORY]\n\nQuestion: Is this a satisfying resolution? What did the brothers achieve in Daniel's final months, and why is Matthew unable to name it?"
+  }
+]

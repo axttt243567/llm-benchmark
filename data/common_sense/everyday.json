@@ -1,0 +1,162 @@
+[
+  {
+    "id": "CS_EVD_001",
+    "domain": "Common Sense",
+    "category": "Everyday Reasoning",
+    "difficulty": "easy",
+    "test_for": "Physical Causation",
+    "prompt": "If you leave an ice cube on a kitchen counter for an hour on a warm day, what will happen to it and why?"
+  },
+  {
+    "id": "CS_EVD_002",
+    "domain": "Common Sense",
+    "category": "Everyday Reasoning",
+    "difficulty": "medium",
+    "test_for": "Object Properties",
+    "prompt": "You need to transport a raw egg and a basketball in your backpack across town. Which item needs more careful handling and what precautions would you take?"
+  },
+  {
+    "id": "CS_EVD_003",
+    "domain": "Common Sense",
+    "category": "Everyday Reasoning",
+    "difficulty": "easy",
+    "test_for": "Temporal Reasoning",
+    "prompt": "If you put bread in a toaster and press the lever down, what typically happens after about 2-3 minutes?"
+  },
+  {
+    "id": "CS_EVD_004",
+    "domain": "Common Sense",
+    "category": "Everyday Reasoning",
+    "difficulty": "medium",
+    "test_for": "Action Consequences",
+    "prompt": "You're watering your garden with a hose and accidentally step on the hose while water is running. What happens to the water flow and why?"
+  },
+  {
+    "id": "CS_EVD_005",
+    "domain": "Common Sense",
+    "category": "Everyday Reasoning",
+    "difficulty": "easy",
+    "test_for": "Size and Scale",
+    "prompt": "Can a full-grown elephant fit inside a standard sedan car? Explain your reasoning."
+  },
+  {
+    "id": "CS_EVD_006",
+    "domain": "Common Sense",
+    "category": "Everyday Reasoning",
+    "difficulty": "medium",
+    "test_for": "Material Properties",
+    "prompt": "Why is it a bad idea to use a metal fork to retrieve toast stuck in a plugged-in toaster?"
+  },
+  {
+    "id": "CS_EVD_007",
+    "domain": "Common Sense",
+    "category": "Everyday Reasoning",
+    "difficulty": "easy",
+    "test_for": "Sequential Actions",
+    "prompt": "To make a peanut butter and jelly sandwich, arrange these steps in the correct order: (A) Spread peanut butter on one slice, (B) Get bread, peanut butter, jelly, and a knife, (C) Put the two slices together, (D) Spread jelly on another slice."
+  },
+  {
+    "id": "CS_EVD_008",
+    "domain": "Common Sense",
+    "category": "Everyday Reasoning",
+    "difficulty": "medium",
+    "test_for": "Gravity and Motion",
+    "prompt": "You're on the second floor of a building and drop a heavy book and a sheet of paper at the same time. Which hits the ground first and why?"
+  },
+  {
+    "id": "CS_EVD_009",
+    "domain": "Common Sense",
+    "category": "Everyday Reasoning",
+    "difficulty": "easy",
+    "test_for": "Weather Appropriateness",
+    "prompt": "It's December in Minnesota and the temperature is -10°F (-23°C). Would you wear shorts and sandals outside? Why or why not?"
+  },
+  {
+    "id": "CS_EVD_010",
+    "domain": "Common Sense",
+    "category": "Everyday Reasoning",
+    "difficulty": "medium",
+    "test_for": "Container Logic",
+    "prompt": "You have a cup filled to the brim with water. If you add a handful of marbles, what happens? What if instead you add a handful of salt?"
+  },
+  {
+    "id": "CS_EVD_011",
+    "domain": "Common Sense",
+    "category": "Everyday Reasoning",
+    "difficulty": "easy",
+    "test_for": "Tool Selection",
+    "prompt": "You need to hang a picture on a wall with a nail. Which tool is most appropriate: a hammer, a screwdriver, or a saw?"
+  },
+  {
+    "id": "CS_EVD_012",
+    "domain": "Common Sense",
+    "category": "Everyday Reasoning",
+    "difficulty": "medium",
+    "test_for": "Biological Needs",
+    "prompt": "Your neighbor asks you to water their houseplants while they're on a 3-week vacation. They also have a bowl of plastic decorative fruit. Do you need to water the plastic fruit too? Explain."
+  },
+  {
+    "id": "CS_EVD_013",
+    "domain": "Common Sense",
+    "category": "Everyday Reasoning",
+    "difficulty": "easy",
+    "test_for": "Spatial Reasoning",
+    "prompt": "You're in a room with one door. To leave the room, which direction relative to the door must you move?"
+  },
+  {
+    "id": "CS_EVD_014",
+    "domain": "Common Sense",
+    "category": "Everyday Reasoning",
+    "difficulty": "medium",
+    "test_for": "Risk Assessment",
+    "prompt": "Which activity is more dangerous and why: walking on a dry sidewalk or walking on the same sidewalk covered in ice?"
+  },
+  {
+    "id": "CS_EVD_015",
+    "domain": "Common Sense",
+    "category": "Everyday Reasoning",
+    "difficulty": "easy",
+    "test_for": "Counting and Quantity",
+    "prompt": "If you have 5 oranges in a basket and give 2 to your friend, then your friend gives you back 1, how many oranges do you have now?"
+  },
+  {
+    "id": "CS_EVD_016",
+    "domain": "Common Sense",
+    "category": "Everyday Reasoning",
+    "difficulty": "medium",
+    "test_for": "Heat Transfer",
+    "prompt": "You take a metal spoon and a wooden spoon, both at room temperature, and put them in a pot of boiling water. After a minute, which handle will feel hotter to touch and why?"
+  },
+  {
+    "id": "CS_EVD_017",
+    "domain": "Common Sense",
+    "category": "Everyday Reasoning",
+    "difficulty": "easy",
+    "test_for": "Light and Vision",
+    "prompt": "Why can't you see anything when you're in a room with no lights or windows and the door is closed?"
+  },
+  {
+    "id": "CS_EVD_018",
+    "domain": "Common Sense",
+    "category": "Everyday Reasoning",
+    "difficulty": "medium",
+    "test_for": "Probability Intuition",
+    "prompt": "It has rained every day for the past week in Seattle. Does this mean it will definitely rain tomorrow? Explain your reasoning."
+  },
+  {
+    "id": "CS_EVD_019",
+    "domain": "Common Sense",
+    "category": "Everyday Reasoning",
+    "difficulty": "easy",
+    "test_for": "Basic Nutrition",
+    "prompt": "If a person eats nothing but candy bars for every meal for a month, will they likely be healthy? Why or why not?"
+  },
+  {
+    "id": "CS_EVD_020",
+    "domain": "Common Sense",
+    "category": "Everyday Reasoning",
+    "difficulty": "medium",
+    "test_for": "Mechanical Reasoning",
+    "prompt": "You're trying to open a stuck jar lid. Would putting the jar under hot water help? Explain the physics behind your answer."
+  }
+]

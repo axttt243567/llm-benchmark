@@ -3,7 +3,7 @@
 LLM Evaluation Tool - Batch Evaluation with Gemini AI
 ======================================================
 Evaluates entire benchmark result files using Gemini AI with strict 0-10 scoring.
-Sends the whole JSON for batch evaluation in a single API call.
+Supports batch processing of multiple files automatically.
 Stores results in: evaluations/{llm_model}/{dataset}/
 """
 
@@ -38,12 +38,18 @@ GEMINI_MODELS = {
     "4": {"name": "gemini-2.0-flash", "description": "Previous gen, stable & reliable"},
 }
 
-# Available datasets
+# Available datasets - organized in category folders
 DATASETS = {
-    "1": {"key": "easy", "file": "questions_easy.json", "description": "Easy - Basic reasoning"},
-    "2": {"key": "medium", "file": "questions_medium.json", "description": "Medium - Logic & math"},
-    "3": {"key": "long_context", "file": "questions_long_context_understanding.json", "description": "Long Context - Complex understanding"},
-    "4": {"key": "full", "file": "questions.json", "description": "Full - Comprehensive test"},
+    "1": {"key": "long_context_retrieval", "file": "long_context/retrieval.json", "description": "Long Context - Information retrieval"},
+    "2": {"key": "long_context_narrative", "file": "long_context/narrative.json", "description": "Long Context - Narrative comprehension"},
+    "3": {"key": "tricky_logical", "file": "tricky_questions/logical_traps.json", "description": "Tricky - Logical traps"},
+    "4": {"key": "tricky_ambiguity", "file": "tricky_questions/ambiguity.json", "description": "Tricky - Linguistic ambiguity"},
+    "5": {"key": "math_algebra", "file": "math_10th_grade/algebra.json", "description": "Math 10th Grade - Algebra"},
+    "6": {"key": "math_geometry", "file": "math_10th_grade/geometry.json", "description": "Math 10th Grade - Geometry"},
+    "7": {"key": "common_sense_everyday", "file": "common_sense/everyday.json", "description": "Common Sense - Everyday"},
+    "8": {"key": "common_sense_social", "file": "common_sense/social.json", "description": "Common Sense - Social"},
+    "9": {"key": "persona_characters", "file": "persona_roleplay/characters.json", "description": "Persona - Characters"},
+    "10": {"key": "persona_scenarios", "file": "persona_roleplay/scenarios.json", "description": "Persona - Scenarios"},
 }
 
 # Terminal colors
@@ -80,6 +86,44 @@ def get_api_key():
     return api_key
 
 
+def get_all_result_files():
+    """Get all result files grouped by dataset."""
+    if not RESULTS_DIR.exists():
+        return {}
+    
+    files_by_dataset = {}
+    
+    for f in RESULTS_DIR.glob("*.json"):
+        if f.name.startswith('.') or 'test_history' in f.name:
+            continue
+        
+        try:
+            with open(f, 'r', encoding='utf-8') as file:
+                data = json.load(file)
+                metadata = data.get('metadata', {})
+                file_dataset = metadata.get('dataset', {}).get('key', 'unknown')
+                
+                if file_dataset not in files_by_dataset:
+                    files_by_dataset[file_dataset] = []
+                
+                files_by_dataset[file_dataset].append({
+                    'path': f,
+                    'name': f.name,
+                    'model': metadata.get('model', 'unknown'),
+                    'dataset': file_dataset,
+                    'total': metadata.get('statistics', {}).get('total_questions', 0),
+                    'run_id': metadata.get('run_id', '')
+                })
+        except:
+            continue
+    
+    # Sort files within each dataset
+    for dataset in files_by_dataset:
+        files_by_dataset[dataset] = sorted(files_by_dataset[dataset], key=lambda x: x['name'], reverse=True)
+    
+    return files_by_dataset
+
+
 def get_result_files_by_dataset(dataset_key):
     """Get list of result files for a specific dataset."""
     if not RESULTS_DIR.exists():
@@ -87,11 +131,9 @@ def get_result_files_by_dataset(dataset_key):
     
     files = []
     for f in RESULTS_DIR.glob("*.json"):
-        # Exclude hidden files and test_history
         if f.name.startswith('.') or 'test_history' in f.name:
             continue
         
-        # Check if file matches dataset
         try:
             with open(f, 'r', encoding='utf-8') as file:
                 data = json.load(file)
@@ -114,6 +156,27 @@ def get_result_files_by_dataset(dataset_key):
             continue
     
     return sorted(files, key=lambda x: x['name'], reverse=True)
+
+
+def is_already_evaluated(result_file_name, llm_model, dataset_key):
+    """Check if a result file has already been evaluated."""
+    clean_llm = llm_model.replace(':', '_').replace('/', '_')
+    eval_dir = EVALUATIONS_DIR / clean_llm / dataset_key
+    
+    if not eval_dir.exists():
+        return False
+    
+    # Check if any evaluation file references this source file
+    for eval_file in eval_dir.glob("*.json"):
+        try:
+            with open(eval_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                if data.get('source_file') == result_file_name:
+                    return True
+        except:
+            continue
+    
+    return False
 
 
 def select_gemini_model():
@@ -147,7 +210,6 @@ def select_dataset():
     print(f"{Colors.BOLD}{Colors.CYAN}╚════════════════════════════════════════════════════════════╝{Colors.RESET}\n")
     
     for key, info in DATASETS.items():
-        # Count available result files for this dataset
         result_count = len(get_result_files_by_dataset(info['key']))
         status = f"{Colors.GREEN}[{result_count} result files]{Colors.RESET}" if result_count > 0 else f"{Colors.RED}[no results]{Colors.RESET}"
         
@@ -167,6 +229,35 @@ def select_dataset():
             return None
 
 
+def select_evaluation_mode():
+    """Let user select single or batch evaluation mode."""
+    print(f"\n{Colors.BOLD}{Colors.CYAN}╔════════════════════════════════════════════════════════════╗{Colors.RESET}")
+    print(f"{Colors.BOLD}{Colors.CYAN}║          📋 SELECT EVALUATION MODE                         ║{Colors.RESET}")
+    print(f"{Colors.BOLD}{Colors.CYAN}╚════════════════════════════════════════════════════════════╝{Colors.RESET}\n")
+    
+    print(f"  {Colors.BOLD}[1]{Colors.RESET} {Colors.GREEN}Single File{Colors.RESET}")
+    print(f"      {Colors.DIM}Evaluate one result file{Colors.RESET}\n")
+    
+    print(f"  {Colors.BOLD}[2]{Colors.RESET} {Colors.YELLOW}Batch - All in Dataset{Colors.RESET}")
+    print(f"      {Colors.DIM}Evaluate all result files for selected dataset{Colors.RESET}\n")
+    
+    print(f"  {Colors.BOLD}[3]{Colors.RESET} {Colors.MAGENTA}Batch - All Unevaluated{Colors.RESET}")
+    print(f"      {Colors.DIM}Evaluate only files that haven't been evaluated yet{Colors.RESET}\n")
+    
+    print(f"  {Colors.BOLD}[4]{Colors.RESET} {Colors.CYAN}Batch - All Files (All Datasets){Colors.RESET}")
+    print(f"      {Colors.DIM}Evaluate all result files across all datasets{Colors.RESET}\n")
+    
+    while True:
+        try:
+            choice = input(f"{Colors.CYAN}Select mode (1-4): {Colors.RESET}").strip()
+            if choice in ['1', '2', '3', '4']:
+                return choice
+            print(f"{Colors.RED}Invalid choice. Please enter 1-4.{Colors.RESET}")
+        except KeyboardInterrupt:
+            print(f"\n{Colors.YELLOW}Cancelled.{Colors.RESET}")
+            return None
+
+
 def select_result_file(dataset_key):
     """Let user select a result file from the dataset."""
     files = get_result_files_by_dataset(dataset_key)
@@ -181,7 +272,11 @@ def select_result_file(dataset_key):
     print(f"{Colors.BOLD}{Colors.CYAN}╚════════════════════════════════════════════════════════════╝{Colors.RESET}\n")
     
     for idx, f in enumerate(files, 1):
-        print(f"  {Colors.BOLD}[{idx}]{Colors.RESET} {Colors.GREEN}{f['name']}{Colors.RESET}")
+        # Check if already evaluated
+        already_eval = is_already_evaluated(f['name'], f['model'], dataset_key)
+        eval_status = f"{Colors.GREEN}[evaluated]{Colors.RESET}" if already_eval else f"{Colors.YELLOW}[pending]{Colors.RESET}"
+        
+        print(f"  {Colors.BOLD}[{idx}]{Colors.RESET} {Colors.GREEN}{f['name']}{Colors.RESET} {eval_status}")
         print(f"      {Colors.DIM}Model: {f['model']} | {f['total']} questions{Colors.RESET}\n")
     
     while True:
@@ -200,6 +295,56 @@ def select_result_file(dataset_key):
             return None
 
 
+def select_result_files_multi(dataset_key):
+    """Let user select multiple result files from the dataset."""
+    files = get_result_files_by_dataset(dataset_key)
+    
+    if not files:
+        print(f"\n{Colors.RED}No result files found for dataset '{dataset_key}'{Colors.RESET}")
+        return []
+    
+    print(f"\n{Colors.BOLD}{Colors.CYAN}╔════════════════════════════════════════════════════════════╗{Colors.RESET}")
+    print(f"{Colors.BOLD}{Colors.CYAN}║          📄 SELECT RESULT FILES (comma-separated)          ║{Colors.RESET}")
+    print(f"{Colors.BOLD}{Colors.CYAN}╚════════════════════════════════════════════════════════════╝{Colors.RESET}\n")
+    
+    for idx, f in enumerate(files, 1):
+        already_eval = is_already_evaluated(f['name'], f['model'], dataset_key)
+        eval_status = f"{Colors.GREEN}[evaluated]{Colors.RESET}" if already_eval else f"{Colors.YELLOW}[pending]{Colors.RESET}"
+        
+        print(f"  {Colors.BOLD}[{idx}]{Colors.RESET} {Colors.GREEN}{f['name']}{Colors.RESET} {eval_status}")
+        print(f"      {Colors.DIM}Model: {f['model']} | {f['total']} questions{Colors.RESET}\n")
+    
+    print(f"  {Colors.BOLD}[A]{Colors.RESET} Select ALL files")
+    print(f"  {Colors.BOLD}[U]{Colors.RESET} Select only UNEVALUATED files\n")
+    
+    while True:
+        try:
+            choice = input(f"{Colors.CYAN}Enter selection (e.g., 1,2,3 or A or U): {Colors.RESET}").strip().upper()
+            
+            if choice == 'A':
+                print(f"\n  {Colors.GREEN}✓{Colors.RESET} Selected: ALL {len(files)} files")
+                return files
+            elif choice == 'U':
+                unevaluated = [f for f in files if not is_already_evaluated(f['name'], f['model'], dataset_key)]
+                print(f"\n  {Colors.GREEN}✓{Colors.RESET} Selected: {len(unevaluated)} unevaluated files")
+                return unevaluated
+            else:
+                indices = [int(x.strip()) for x in choice.split(',')]
+                selected = []
+                for idx in indices:
+                    if 1 <= idx <= len(files):
+                        selected.append(files[idx - 1])
+                if selected:
+                    print(f"\n  {Colors.GREEN}✓{Colors.RESET} Selected: {len(selected)} files")
+                    return selected
+                print(f"{Colors.RED}Invalid selection.{Colors.RESET}")
+        except ValueError:
+            print(f"{Colors.RED}Please enter valid numbers separated by commas, or A/U.{Colors.RESET}")
+        except KeyboardInterrupt:
+            print(f"\n{Colors.YELLOW}Cancelled.{Colors.RESET}")
+            return []
+
+
 def create_evaluation_prompt(result_data):
     """Create the system prompt and user prompt for batch evaluation."""
     
@@ -208,7 +353,6 @@ def create_evaluation_prompt(result_data):
     model_tested = metadata.get('model', 'unknown')
     dataset_key = metadata.get('dataset', {}).get('key', 'unknown')
     
-    # Build the questions/responses for evaluation
     evaluation_items = []
     for r in results:
         evaluation_items.append({
@@ -278,17 +422,14 @@ def batch_evaluate(model, result_data, max_retries=3):
             
             text = response.text.strip()
             
-            # Clean up markdown code blocks if present
             if '```json' in text:
                 text = text.split('```json')[1].split('```')[0].strip()
             elif '```' in text:
                 text = text.split('```')[1].split('```')[0].strip()
             
-            # Parse JSON response
             eval_result = json.loads(text)
             evaluations = eval_result.get('evaluations', [])
             
-            # Map evaluations back to original items
             eval_map = {e['question_id']: e for e in evaluations}
             
             final_evaluations = []
@@ -343,8 +484,132 @@ def generate_output_path(llm_model, dataset_key, gemini_model):
     return output_dir / filename
 
 
+def evaluate_single_file(result_info, gemini_model_name, model, delay_between=5):
+    """Evaluate a single result file and return success status."""
+    
+    try:
+        with open(result_info['path'], 'r', encoding='utf-8') as f:
+            result_data = json.load(f)
+        
+        metadata = result_data.get('metadata', {})
+        results = result_data.get('results', [])
+        llm_model = metadata.get('model', 'unknown')
+        dataset_key = result_info['dataset']
+        
+        print(f"\n{Colors.CYAN}Processing: {result_info['name']}{Colors.RESET}")
+        print(f"  {Colors.DIM}Model: {llm_model} | {len(results)} questions{Colors.RESET}")
+        
+        # Run evaluation
+        start_time = time.time()
+        evaluations, error = batch_evaluate(model, result_data)
+        eval_time = time.time() - start_time
+        
+        if error:
+            print(f"  {Colors.RED}✗ Failed: {error}{Colors.RESET}")
+            return False, error
+        
+        # Calculate statistics
+        scores = [e['score'] for e in evaluations if e['score'] is not None]
+        avg_score = sum(scores) / len(scores) if scores else 0
+        evaluated_count = len(scores)
+        
+        # Save results
+        output_path = generate_output_path(llm_model, dataset_key, gemini_model_name)
+        
+        output_data = {
+            'evaluated_at': datetime.datetime.now().isoformat(),
+            'source_file': result_info['name'],
+            'llm_model': llm_model,
+            'dataset': dataset_key,
+            'evaluation_model': gemini_model_name,
+            'evaluation_time_seconds': round(eval_time, 2),
+            'total_evaluated': evaluated_count,
+            'total_questions': len(evaluations),
+            'average_score': round(avg_score, 2),
+            'score_distribution': {
+                'perfect_10': len([s for s in scores if s == 10]),
+                'excellent_9': len([s for s in scores if s == 9]),
+                'good_7_8': len([s for s in scores if 7 <= s <= 8]),
+                'mediocre_5_6': len([s for s in scores if 5 <= s <= 6]),
+                'poor_3_4': len([s for s in scores if 3 <= s <= 4]),
+                'fail_0_2': len([s for s in scores if 0 <= s <= 2]),
+            },
+            'evaluations': evaluations
+        }
+        
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(output_data, f, indent=2, ensure_ascii=False)
+        
+        score_color = Colors.GREEN if avg_score >= 7 else Colors.YELLOW if avg_score >= 4 else Colors.RED
+        print(f"  {Colors.GREEN}✓{Colors.RESET} Completed in {eval_time:.1f}s | Avg Score: {score_color}{avg_score:.1f}/10{Colors.RESET}")
+        print(f"  {Colors.DIM}Saved: {output_path.name}{Colors.RESET}")
+        
+        # Delay between evaluations to avoid rate limiting
+        if delay_between > 0:
+            time.sleep(delay_between)
+        
+        return True, None
+        
+    except Exception as e:
+        print(f"  {Colors.RED}✗ Error: {str(e)}{Colors.RESET}")
+        return False, str(e)
+
+
+def run_batch_evaluation(files, gemini_model_name, delay_between=5):
+    """Run batch evaluation on multiple files."""
+    
+    if not files:
+        print(f"\n{Colors.YELLOW}No files to evaluate.{Colors.RESET}")
+        return
+    
+    api_key = get_api_key()
+    if not api_key:
+        print(f"{Colors.RED}✗ GEMINI_API_KEY not found!{Colors.RESET}")
+        return
+    
+    print(f"\n{Colors.BOLD}{Colors.MAGENTA}╔════════════════════════════════════════════════════════════╗{Colors.RESET}")
+    print(f"{Colors.BOLD}{Colors.MAGENTA}║             🚀 BATCH EVALUATION STARTING                   ║{Colors.RESET}")
+    print(f"{Colors.BOLD}{Colors.MAGENTA}╚════════════════════════════════════════════════════════════╝{Colors.RESET}")
+    print(f"\n  Files to process: {Colors.CYAN}{len(files)}{Colors.RESET}")
+    print(f"  Gemini model: {Colors.GREEN}{gemini_model_name}{Colors.RESET}")
+    print(f"  Delay between files: {Colors.YELLOW}{delay_between}s{Colors.RESET}")
+    print(f"{Colors.DIM}{'─' * 60}{Colors.RESET}")
+    
+    # Initialize Gemini
+    genai.configure(api_key=api_key)
+    model = genai.GenerativeModel(gemini_model_name)
+    
+    success_count = 0
+    fail_count = 0
+    total_start = time.time()
+    
+    for idx, file_info in enumerate(files, 1):
+        print(f"\n{Colors.BOLD}[{idx}/{len(files)}]{Colors.RESET}", end="")
+        success, error = evaluate_single_file(file_info, gemini_model_name, model, delay_between)
+        
+        if success:
+            success_count += 1
+        else:
+            fail_count += 1
+    
+    total_time = time.time() - total_start
+    
+    # Summary
+    print(f"""
+{Colors.BOLD}{Colors.GREEN}
+╔════════════════════════════════════════════════════════════╗
+║                 ✓ BATCH EVALUATION COMPLETE                ║
+╚════════════════════════════════════════════════════════════╝
+{Colors.RESET}""")
+    print(f"  Total Files:    {len(files)}")
+    print(f"  {Colors.GREEN}Successful:     {success_count}{Colors.RESET}")
+    print(f"  {Colors.RED}Failed:         {fail_count}{Colors.RESET}")
+    print(f"  Total Time:     {total_time:.1f}s")
+    print(f"{Colors.DIM}{'─' * 60}{Colors.RESET}")
+
+
 def run_evaluation():
-    """Main evaluation function with new flow."""
+    """Main evaluation function with batch processing support."""
     clear_screen()
     
     print(f"""
@@ -359,11 +624,12 @@ def run_evaluation():
 ║   {Colors.YELLOW}╚══════╝  ╚═══╝  ╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚══════╝{Colors.CYAN}   ║
 ║                                                                   ║
 ║        Batch LLM Evaluator - Strict 0-10 Scoring with Gemini      ║
+║              Now with Batch Processing Support! 🚀                ║
 ╚═══════════════════════════════════════════════════════════════════╝
 {Colors.RESET}
 """)
     
-    # 1. Check API key
+    # Check API key
     api_key = get_api_key()
     if not api_key:
         print(f"{Colors.RED}✗ GEMINI_API_KEY not found!{Colors.RESET}")
@@ -373,126 +639,104 @@ def run_evaluation():
     
     print(f"{Colors.GREEN}✓{Colors.RESET} API key loaded")
     
-    # 2. Select Gemini model
+    # Select evaluation mode
+    mode = select_evaluation_mode()
+    if not mode:
+        return
+    
+    # Select Gemini model
     gemini_model_name = select_gemini_model()
     if not gemini_model_name:
         return
     
-    # 3. Select dataset
-    dataset_key = select_dataset()
-    if not dataset_key:
-        return
-    
-    # 4. Select result file
-    result_info = select_result_file(dataset_key)
-    if not result_info:
-        input(f"\n{Colors.DIM}Press Enter to return...{Colors.RESET}")
-        return
-    
-    # 5. Load result file
-    print(f"\n{Colors.CYAN}Loading result file...{Colors.RESET}")
-    with open(result_info['path'], 'r', encoding='utf-8') as f:
-        result_data = json.load(f)
-    
-    metadata = result_data.get('metadata', {})
-    results = result_data.get('results', [])
-    llm_model = metadata.get('model', 'unknown')
-    
-    print(f"  {Colors.GREEN}✓{Colors.RESET} Loaded {len(results)} responses from {Colors.CYAN}{llm_model}{Colors.RESET}")
-    
-    # 6. Initialize Gemini
-    print(f"\n{Colors.CYAN}Initializing {gemini_model_name}...{Colors.RESET}")
-    genai.configure(api_key=api_key)
-    model = genai.GenerativeModel(gemini_model_name)
-    print(f"  {Colors.GREEN}✓{Colors.RESET} Gemini ready")
-    
-    # 7. Run batch evaluation
-    print(f"\n{Colors.BOLD}{Colors.MAGENTA}Sending {len(results)} responses for batch evaluation...{Colors.RESET}")
-    print(f"{Colors.DIM}This may take 30-60 seconds...{Colors.RESET}\n")
-    
-    start_time = time.time()
-    evaluations, error = batch_evaluate(model, result_data)
-    eval_time = time.time() - start_time
-    
-    if error:
-        print(f"\n{Colors.RED}✗ Evaluation failed: {error}{Colors.RESET}")
-        input(f"\n{Colors.DIM}Press Enter to return...{Colors.RESET}")
-        return
-    
-    # 8. Calculate statistics
-    scores = [e['score'] for e in evaluations if e['score'] is not None]
-    avg_score = sum(scores) / len(scores) if scores else 0
-    evaluated_count = len(scores)
-    
-    # Display results preview
-    print(f"\n{Colors.BOLD}Evaluation Results Preview:{Colors.RESET}")
-    print(f"{Colors.DIM}{'─' * 60}{Colors.RESET}")
-    
-    for ev in evaluations[:5]:
-        score = ev['score']
-        if score is not None:
-            score_color = Colors.GREEN if score >= 8 else Colors.YELLOW if score >= 5 else Colors.RED
-            remark = ev['remark'][:50] + '...' if len(ev['remark']) > 50 else ev['remark']
-            print(f"  {Colors.CYAN}{ev['question_id']}{Colors.RESET} {score_color}{score}/10{Colors.RESET} - {Colors.DIM}{remark}{Colors.RESET}")
-    
-    if len(evaluations) > 5:
-        print(f"  {Colors.DIM}... and {len(evaluations) - 5} more{Colors.RESET}")
-    
-    # 9. Save evaluation results
-    output_path = generate_output_path(llm_model, dataset_key, gemini_model_name)
-    
-    output_data = {
-        'evaluated_at': datetime.datetime.now().isoformat(),
-        'source_file': result_info['name'],
-        'llm_model': llm_model,
-        'dataset': dataset_key,
-        'evaluation_model': gemini_model_name,
-        'evaluation_time_seconds': round(eval_time, 2),
-        'total_evaluated': evaluated_count,
-        'total_questions': len(evaluations),
-        'average_score': round(avg_score, 2),
-        'score_distribution': {
-            'perfect_10': len([s for s in scores if s == 10]),
-            'excellent_9': len([s for s in scores if s == 9]),
-            'good_7_8': len([s for s in scores if 7 <= s <= 8]),
-            'mediocre_5_6': len([s for s in scores if 5 <= s <= 6]),
-            'poor_3_4': len([s for s in scores if 3 <= s <= 4]),
-            'fail_0_2': len([s for s in scores if 0 <= s <= 2]),
-        },
-        'evaluations': evaluations
-    }
-    
-    with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(output_data, f, indent=2, ensure_ascii=False)
-    
-    # 10. Display summary
-    print(f"""
-{Colors.BOLD}{Colors.GREEN}
-╔═══════════════════════════════════════════════════════════════════╗
-║                    ✓ EVALUATION COMPLETE!                         ║
-╚═══════════════════════════════════════════════════════════════════╝
-{Colors.RESET}
-""")
-    
-    print(f"{Colors.BOLD}Summary:{Colors.RESET}")
-    print(f"{Colors.DIM}{'─' * 60}{Colors.RESET}")
-    print(f"  LLM Tested:         {Colors.CYAN}{llm_model}{Colors.RESET}")
-    print(f"  Dataset:            {Colors.YELLOW}{dataset_key.upper()}{Colors.RESET}")
-    print(f"  Evaluated By:       {Colors.MAGENTA}{gemini_model_name}{Colors.RESET}")
-    print(f"  Evaluation Time:    {eval_time:.1f}s")
-    print(f"{Colors.DIM}{'─' * 60}{Colors.RESET}")
-    print(f"  Total Evaluated:    {evaluated_count}/{len(evaluations)}")
-    print(f"  Average Score:      {Colors.GREEN if avg_score >= 7 else Colors.YELLOW if avg_score >= 4 else Colors.RED}{avg_score:.1f}/10{Colors.RESET}")
-    print(f"{Colors.DIM}{'─' * 60}{Colors.RESET}")
-    print(f"  Perfect (10):       {output_data['score_distribution']['perfect_10']}")
-    print(f"  Excellent (9):      {output_data['score_distribution']['excellent_9']}")
-    print(f"  Good (7-8):         {output_data['score_distribution']['good_7_8']}")
-    print(f"  Mediocre (5-6):     {output_data['score_distribution']['mediocre_5_6']}")
-    print(f"  Poor (3-4):         {output_data['score_distribution']['poor_3_4']}")
-    print(f"  Fail (0-2):         {output_data['score_distribution']['fail_0_2']}")
-    print(f"{Colors.DIM}{'─' * 60}{Colors.RESET}")
-    print(f"\n{Colors.BOLD}Saved to:{Colors.RESET}")
-    print(f"  📄 {Colors.GREEN}{output_path}{Colors.RESET}")
+    if mode == '1':
+        # Single file mode
+        dataset_key = select_dataset()
+        if not dataset_key:
+            return
+        
+        result_info = select_result_file(dataset_key)
+        if not result_info:
+            input(f"\n{Colors.DIM}Press Enter to return...{Colors.RESET}")
+            return
+        
+        # Run single evaluation
+        run_batch_evaluation([result_info], gemini_model_name, delay_between=0)
+        
+    elif mode == '2':
+        # Batch - All in dataset
+        dataset_key = select_dataset()
+        if not dataset_key:
+            return
+        
+        files = get_result_files_by_dataset(dataset_key)
+        if not files:
+            print(f"\n{Colors.RED}No result files found for dataset '{dataset_key}'{Colors.RESET}")
+            input(f"\n{Colors.DIM}Press Enter to return...{Colors.RESET}")
+            return
+        
+        print(f"\n{Colors.YELLOW}Found {len(files)} files for {dataset_key.upper()}{Colors.RESET}")
+        confirm = input(f"{Colors.CYAN}Proceed with batch evaluation? (y/n): {Colors.RESET}").strip().lower()
+        if confirm == 'y':
+            run_batch_evaluation(files, gemini_model_name)
+        
+    elif mode == '3':
+        # Batch - Only unevaluated
+        dataset_key = select_dataset()
+        if not dataset_key:
+            return
+        
+        files = get_result_files_by_dataset(dataset_key)
+        unevaluated = [f for f in files if not is_already_evaluated(f['name'], f['model'], dataset_key)]
+        
+        if not unevaluated:
+            print(f"\n{Colors.GREEN}All files in {dataset_key.upper()} have already been evaluated!{Colors.RESET}")
+            input(f"\n{Colors.DIM}Press Enter to return...{Colors.RESET}")
+            return
+        
+        print(f"\n{Colors.YELLOW}Found {len(unevaluated)} unevaluated files (out of {len(files)} total){Colors.RESET}")
+        confirm = input(f"{Colors.CYAN}Proceed with batch evaluation? (y/n): {Colors.RESET}").strip().lower()
+        if confirm == 'y':
+            run_batch_evaluation(unevaluated, gemini_model_name)
+        
+    elif mode == '4':
+        # Batch - All files across all datasets
+        all_files = get_all_result_files()
+        
+        total_files = sum(len(files) for files in all_files.values())
+        if total_files == 0:
+            print(f"\n{Colors.RED}No result files found in any dataset.{Colors.RESET}")
+            input(f"\n{Colors.DIM}Press Enter to return...{Colors.RESET}")
+            return
+        
+        print(f"\n{Colors.BOLD}Files by dataset:{Colors.RESET}")
+        for dataset, files in all_files.items():
+            unevaluated = [f for f in files if not is_already_evaluated(f['name'], f['model'], dataset)]
+            print(f"  {Colors.YELLOW}{dataset.upper()}{Colors.RESET}: {len(files)} total, {len(unevaluated)} unevaluated")
+        
+        print(f"\n{Colors.BOLD}Options:{Colors.RESET}")
+        print(f"  {Colors.BOLD}[A]{Colors.RESET} Evaluate ALL files ({total_files} total)")
+        print(f"  {Colors.BOLD}[U]{Colors.RESET} Evaluate only UNEVALUATED files")
+        print(f"  {Colors.BOLD}[C]{Colors.RESET} Cancel")
+        
+        choice = input(f"\n{Colors.CYAN}Select option: {Colors.RESET}").strip().upper()
+        
+        if choice == 'A':
+            # Flatten all files
+            flat_files = []
+            for dataset, files in all_files.items():
+                flat_files.extend(files)
+            run_batch_evaluation(flat_files, gemini_model_name)
+        elif choice == 'U':
+            flat_files = []
+            for dataset, files in all_files.items():
+                for f in files:
+                    if not is_already_evaluated(f['name'], f['model'], dataset):
+                        flat_files.append(f)
+            if flat_files:
+                run_batch_evaluation(flat_files, gemini_model_name)
+            else:
+                print(f"\n{Colors.GREEN}All files have already been evaluated!{Colors.RESET}")
     
     input(f"\n{Colors.DIM}Press Enter to return...{Colors.RESET}")
 

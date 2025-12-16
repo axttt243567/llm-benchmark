@@ -465,19 +465,22 @@ def display_status():
     
     print()
     
-    # Dataset files
+    # Dataset files - organized in category folders
     print(f"{Colors.BOLD}📁 Available Datasets:{Colors.RESET}")
     print_divider()
     
     if DATA_DIR.exists():
-        for f in sorted(DATA_DIR.glob("*.json")):
-            try:
-                with open(f, 'r', encoding='utf-8') as file:
-                    questions = json.load(file)
-                    count = len(questions)
-                print(f"  {Colors.GREEN}{f.name}{Colors.RESET} - {count} questions")
-            except:
-                print(f"  {Colors.YELLOW}{f.name}{Colors.RESET} - error reading")
+        for folder in sorted(DATA_DIR.iterdir()):
+            if folder.is_dir():
+                print(f"  {Colors.CYAN}📂 {folder.name}/{Colors.RESET}")
+                for f in sorted(folder.glob("*.json")):
+                    try:
+                        with open(f, 'r', encoding='utf-8') as file:
+                            questions = json.load(file)
+                            count = len(questions)
+                        print(f"    {Colors.GREEN}{f.name}{Colors.RESET} - {count} questions")
+                    except:
+                        print(f"    {Colors.YELLOW}{f.name}{Colors.RESET} - error reading")
     
     print()
     input(f"{Colors.DIM}Press Enter to return to menu...{Colors.RESET}")

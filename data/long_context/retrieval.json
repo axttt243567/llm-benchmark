@@ -1,0 +1,162 @@
+[
+  {
+    "id": "LC_RET_001",
+    "domain": "Long Context Understanding",
+    "category": "Information Retrieval",
+    "difficulty": "medium",
+    "test_for": "Fact Extraction from Long Text",
+    "prompt": "Read the following passage about the history of computing:\n\n[BEGIN PASSAGE]\nThe history of computing spans several centuries, beginning with mechanical devices designed to perform calculations. In 1642, Blaise Pascal invented the Pascaline, a mechanical calculator. Charles Babbage designed the Analytical Engine in 1837, which is considered the first general-purpose computer concept. Ada Lovelace wrote the first algorithm intended for machine processing in 1843. The ENIAC, completed in 1945, was the first electronic general-purpose computer. It weighed 30 tons and occupied 1,800 square feet. The transistor was invented at Bell Labs in 1947 by John Bardeen, Walter Brattain, and William Shockley. The first commercial computer, UNIVAC I, was delivered to the U.S. Census Bureau in 1951. IBM introduced the IBM 701 in 1952. The integrated circuit was invented independently by Jack Kilby at Texas Instruments and Robert Noyce at Fairchild Semiconductor in 1958-1959. Intel released the first commercial microprocessor, the Intel 4004, in 1971. The Apple II was released in 1977, and the IBM PC in 1981. Tim Berners-Lee invented the World Wide Web in 1989 while working at CERN.\n[END PASSAGE]\n\nQuestion: What year was the transistor invented and who were the three inventors?"
+  },
+  {
+    "id": "LC_RET_002",
+    "domain": "Long Context Understanding",
+    "category": "Information Retrieval",
+    "difficulty": "medium",
+    "test_for": "Multi-hop Reasoning",
+    "prompt": "Read the following company organizational structure:\n\n[BEGIN DOCUMENT]\nAcme Corporation Organizational Chart 2024:\n\nCEO: Sarah Johnson (Reports to: Board of Directors)\n- CFO: Michael Chen (Reports to: Sarah Johnson)\n  - Finance Director: Lisa Park (Reports to: Michael Chen)\n    - Senior Accountant: Tom Wilson (Reports to: Lisa Park)\n    - Budget Analyst: Maria Garcia (Reports to: Lisa Park)\n  - Treasury Manager: David Kim (Reports to: Michael Chen)\n- CTO: Robert Smith (Reports to: Sarah Johnson)\n  - VP Engineering: Jennifer Lee (Reports to: Robert Smith)\n    - Senior Developer: Alex Brown (Reports to: Jennifer Lee)\n    - DevOps Lead: Chris Taylor (Reports to: Jennifer Lee)\n  - VP Product: Amanda White (Reports to: Robert Smith)\n    - Product Manager: Kevin Zhang (Reports to: Amanda White)\n- COO: Emily Davis (Reports to: Sarah Johnson)\n  - Operations Director: James Miller (Reports to: Emily Davis)\n    - Logistics Manager: Rachel Green (Reports to: James Miller)\n[END DOCUMENT]\n\nQuestion: How many management levels are between Tom Wilson and Sarah Johnson?"
+  },
+  {
+    "id": "LC_RET_003",
+    "domain": "Long Context Understanding",
+    "category": "Information Retrieval",
+    "difficulty": "hard",
+    "test_for": "Cross-Reference Matching",
+    "prompt": "Read the following two documents and answer the question:\n\n[DOCUMENT A - Employee Records]\nEmployee ID: E001, Name: John Smith, Department: Sales, Hire Date: 2019-03-15\nEmployee ID: E002, Name: Jane Doe, Department: Marketing, Hire Date: 2018-07-22\nEmployee ID: E003, Name: Bob Johnson, Department: Engineering, Hire Date: 2020-01-10\nEmployee ID: E004, Name: Alice Williams, Department: Sales, Hire Date: 2017-11-05\nEmployee ID: E005, Name: Charlie Brown, Department: HR, Hire Date: 2021-06-30\n\n[DOCUMENT B - Project Assignments]\nProject Alpha: E001, E003, E004 (Lead: E004)\nProject Beta: E002, E005 (Lead: E002)\nProject Gamma: E001, E002, E003 (Lead: E003)\nProject Delta: E004, E005 (Lead: E005)\n\nQuestion: Which employee from the Engineering department is leading a project, and what is the name of that project?"
+  },
+  {
+    "id": "LC_RET_004",
+    "domain": "Long Context Understanding",
+    "category": "Information Retrieval",
+    "difficulty": "medium",
+    "test_for": "Temporal Ordering",
+    "prompt": "Read the following timeline of events:\n\n[BEGIN TIMELINE]\nJanuary 5: Company announced new product line\nJanuary 12: Board meeting held to discuss Q4 results\nJanuary 18: Marketing campaign launched for spring collection\nJanuary 25: CEO gave interview to financial press\nFebruary 2: Q4 earnings report released showing 15% growth\nFebruary 8: New warehouse facility opened in Texas\nFebruary 15: Partnership announced with European distributor\nFebruary 22: Annual shareholder meeting scheduled\nMarch 1: Stock split announced (2-for-1)\nMarch 8: New CFO appointment announced\nMarch 15: Product recall issued for defective batch\nMarch 22: Quarterly dividend declared at $0.50 per share\n[END TIMELINE]\n\nQuestion: List all events that occurred between the earnings report release and the stock split announcement, in chronological order."
+  },
+  {
+    "id": "LC_RET_005",
+    "domain": "Long Context Understanding",
+    "category": "Information Retrieval",
+    "difficulty": "hard",
+    "test_for": "Numerical Data Extraction",
+    "prompt": "Read the following financial report:\n\n[BEGIN REPORT]\nQuarterly Financial Summary - TechCorp Inc.\n\nQ1 2024:\n- Revenue: $45.2 million\n- Operating Expenses: $38.1 million\n- Net Income: $5.8 million\n- Employees: 892\n\nQ2 2024:\n- Revenue: $52.7 million\n- Operating Expenses: $41.3 million\n- Net Income: $9.2 million\n- Employees: 945\n\nQ3 2024:\n- Revenue: $48.9 million\n- Operating Expenses: $40.5 million\n- Net Income: $6.7 million\n- Employees: 923\n\nQ4 2024:\n- Revenue: $61.4 million\n- Operating Expenses: $45.2 million\n- Net Income: $13.1 million\n- Employees: 1,012\n\nAnnual Totals:\n- Total Revenue: $208.2 million\n- Total Operating Expenses: $165.1 million\n- Total Net Income: $34.8 million\n[END REPORT]\n\nQuestion: In which quarter did TechCorp have the highest profit margin (Net Income / Revenue), and what was that percentage?"
+  },
+  {
+    "id": "LC_RET_006",
+    "domain": "Long Context Understanding",
+    "category": "Information Retrieval",
+    "difficulty": "medium",
+    "test_for": "Entity Tracking",
+    "prompt": "Read the following story and track the character movements:\n\n[BEGIN STORY]\nMary started her day in the kitchen making breakfast. She then moved to the living room to watch the news. Her husband John was in the garage fixing his car. At 9 AM, Mary went upstairs to the bedroom to get dressed. John finished in the garage and went to the kitchen for coffee. Mary came back downstairs to the living room. John joined her there with his coffee. At 10 AM, Mary went to the home office to work. John went back to the garage. At noon, both met in the kitchen for lunch. After lunch, Mary returned to the home office while John went to the living room to read. At 3 PM, Mary went to the garden to water plants. John stayed in the living room. At 5 PM, both were in the kitchen preparing dinner.\n[END STORY]\n\nQuestion: At noon, list all the rooms that both Mary and John had visited at least once during the day."
+  },
+  {
+    "id": "LC_RET_007",
+    "domain": "Long Context Understanding",
+    "category": "Information Retrieval",
+    "difficulty": "hard",
+    "test_for": "Conditional Information Extraction",
+    "prompt": "Read the following product catalog and pricing rules:\n\n[BEGIN CATALOG]\nProduct List:\n- Widget A: Base price $25, Category: Electronics\n- Widget B: Base price $40, Category: Electronics\n- Gadget X: Base price $15, Category: Accessories\n- Gadget Y: Base price $30, Category: Accessories\n- Device M: Base price $100, Category: Premium\n- Device N: Base price $150, Category: Premium\n\nDiscount Rules:\n- Electronics: 10% off for orders over $50\n- Accessories: 15% off for orders over $30\n- Premium: 20% off for orders over $200\n- Bundle discount: Buy any 3 items, get additional 5% off total\n- Member discount: Additional 5% off final price\n\nNote: Discounts are applied in order: Category discount first, then bundle, then member.\n[END CATALOG]\n\nQuestion: A member buys Widget A, Widget B, and Gadget X. What is the final price after all applicable discounts?"
+  },
+  {
+    "id": "LC_RET_008",
+    "domain": "Long Context Understanding",
+    "category": "Information Retrieval",
+    "difficulty": "medium",
+    "test_for": "Pattern Recognition in Text",
+    "prompt": "Read the following log entries and identify the pattern:\n\n[BEGIN LOG]\n2024-01-01 08:00:00 - System startup completed\n2024-01-01 08:15:00 - User login: admin\n2024-01-01 08:30:00 - Backup process started\n2024-01-01 09:00:00 - ERROR: Database connection timeout\n2024-01-01 09:05:00 - Retry attempt 1 for database\n2024-01-01 09:10:00 - Database connection restored\n2024-01-01 09:15:00 - Backup process resumed\n2024-01-01 10:00:00 - ERROR: Database connection timeout\n2024-01-01 10:05:00 - Retry attempt 1 for database\n2024-01-01 10:10:00 - Database connection restored\n2024-01-01 11:00:00 - ERROR: Database connection timeout\n2024-01-01 11:05:00 - Retry attempt 1 for database\n2024-01-01 11:10:00 - Database connection restored\n2024-01-01 12:00:00 - Scheduled maintenance window\n[END LOG]\n\nQuestion: What pattern do you observe in the database errors, and at what time would you predict the next error to occur if the pattern continues?"
+  },
+  {
+    "id": "LC_RET_009",
+    "domain": "Long Context Understanding",
+    "category": "Information Retrieval",
+    "difficulty": "hard",
+    "test_for": "Contradition Detection",
+    "prompt": "Read the following witness statements and identify contradictions:\n\n[BEGIN STATEMENTS]\nWitness A (interviewed 2:00 PM):\n\"I saw the suspect enter the building at approximately 10:30 AM. He was wearing a blue jacket and carrying a black briefcase. He went directly to the elevator.\"\n\nWitness B (interviewed 2:30 PM):\n\"The man arrived around 10:15 AM. I remember because I was on my coffee break. He had a red jacket and was carrying a laptop bag. He used the stairs.\"\n\nWitness C (interviewed 3:00 PM):\n\"I was at the reception desk when a man in a blue jacket came in at 10:30 AM. He asked me for directions to the third floor and took the elevator. He was carrying a black briefcase.\"\n\nWitness D (interviewed 3:30 PM):\n\"I saw someone matching that description in the parking lot at 10:45 AM. He was getting out of a silver sedan, wearing a blue jacket. He entered through the side door.\"\n[END STATEMENTS]\n\nQuestion: List all the contradictions between the witness statements regarding the suspect's appearance, time of arrival, and method of entry."
+  },
+  {
+    "id": "LC_RET_010",
+    "domain": "Long Context Understanding",
+    "category": "Information Retrieval",
+    "difficulty": "medium",
+    "test_for": "Hierarchical Data Navigation",
+    "prompt": "Read the following file system structure:\n\n[BEGIN STRUCTURE]\n/root\n├── documents\n│   ├── work\n│   │   ├── reports\n│   │   │   ├── q1_report.pdf\n│   │   │   ├── q2_report.pdf\n│   │   │   └── annual_summary.docx\n│   │   └── presentations\n│   │       ├── client_pitch.pptx\n│   │       └── team_update.pptx\n│   └── personal\n│       ├── taxes\n│       │   └── 2024_return.pdf\n│       └── recipes\n│           ├── desserts.txt\n│           └── main_dishes.txt\n├── projects\n│   ├── project_alpha\n│   │   ├── src\n│   │   │   ├── main.py\n│   │   │   └── utils.py\n│   │   └── tests\n│   │       └── test_main.py\n│   └── project_beta\n│       └── README.md\n└── backups\n    └── 2024\n        └── january\n            └── backup.zip\n[END STRUCTURE]\n\nQuestion: What is the full path to the file 'utils.py', and how many levels deep is it from the root?"
+  },
+  {
+    "id": "LC_RET_011",
+    "domain": "Long Context Understanding",
+    "category": "Information Retrieval",
+    "difficulty": "hard",
+    "test_for": "Aggregation Across Sections",
+    "prompt": "Read the following meeting minutes from three different meetings:\n\n[MEETING 1 - January 5]\nAttendees: Alice, Bob, Charlie, Diana\nDecisions Made:\n- Approved budget increase of $50,000 for Q1\n- Assigned Bob as project lead for Initiative X\n- Scheduled next review for January 20\n\n[MEETING 2 - January 20]\nAttendees: Alice, Charlie, Eve, Frank\nDecisions Made:\n- Extended deadline for Initiative X to February 15\n- Approved hiring of 2 additional developers\n- Assigned Eve to assist Bob on Initiative X\n\n[MEETING 3 - February 1]\nAttendees: Bob, Charlie, Diana, Eve\nDecisions Made:\n- Reduced scope of Initiative X due to budget constraints\n- Reassigned Frank to Initiative Y\n- Approved $25,000 additional funding for Initiative X\n\nQuestion: Which person attended the most meetings, and what is the total additional budget approved across all three meetings?"
+  },
+  {
+    "id": "LC_RET_012",
+    "domain": "Long Context Understanding",
+    "category": "Information Retrieval",
+    "difficulty": "medium",
+    "test_for": "Specific Detail Recall",
+    "prompt": "Read the following detailed product specifications:\n\n[BEGIN SPECIFICATIONS]\nSmartPhone Pro X1 Technical Specifications:\n\nDisplay:\n- Size: 6.7 inches\n- Resolution: 2778 x 1284 pixels\n- Type: Super Retina XDR OLED\n- Refresh Rate: 120Hz ProMotion\n- Brightness: 1000 nits (typical), 2000 nits (peak HDR)\n\nProcessor:\n- Chip: A18 Pro Bionic\n- CPU: 6-core (2 performance + 4 efficiency)\n- GPU: 6-core\n- Neural Engine: 16-core\n\nCamera System:\n- Main: 48MP, f/1.78 aperture, sensor-shift OIS\n- Ultra Wide: 12MP, f/2.2 aperture, 120° field of view\n- Telephoto: 12MP, f/2.8 aperture, 5x optical zoom\n- Front: 12MP, f/1.9 aperture, autofocus\n\nBattery:\n- Capacity: 4422 mAh\n- Wired Charging: 27W fast charging\n- Wireless Charging: 15W MagSafe, 7.5W Qi\n- Video Playback: Up to 29 hours\n\nDimensions:\n- Height: 160.7 mm\n- Width: 77.6 mm\n- Depth: 7.85 mm\n- Weight: 221 grams\n[END SPECIFICATIONS]\n\nQuestion: What is the difference in megapixels between the main camera and the telephoto camera, and what is the aperture of the ultra-wide lens?"
+  },
+  {
+    "id": "LC_RET_013",
+    "domain": "Long Context Understanding",
+    "category": "Information Retrieval",
+    "difficulty": "hard",
+    "test_for": "Inference from Scattered Information",
+    "prompt": "Read the following excerpts from a mystery novel:\n\n[EXCERPT 1 - Page 15]\nDetective Morris examined the study. The grandfather clock had stopped at 11:47 PM. A half-empty glass of whiskey sat on the desk, and the window was slightly ajar.\n\n[EXCERPT 2 - Page 45]\nThe maid testified that she had served Mr. Hartford his evening whiskey at precisely 10:30 PM, as was his nightly ritual. She noticed the window was closed at that time.\n\n[EXCERPT 3 - Page 78]\nThe coroner's report indicated time of death between 11:00 PM and midnight. Cause: blunt force trauma to the head. The weapon was never recovered.\n\n[EXCERPT 4 - Page 112]\nNeighbor Mrs. Chen reported hearing a loud crash from the Hartford estate at approximately 11:45 PM. She saw a figure running toward the garden gate moments later.\n\n[EXCERPT 5 - Page 156]\nThe gardener mentioned that the garden gate had a faulty lock that wouldn't engage properly. He had reported it to Mr. Hartford a week prior.\n\nQuestion: Based on all the scattered information, construct a timeline of events from 10:30 PM to when Mrs. Chen saw the figure running."
+  },
+  {
+    "id": "LC_RET_014",
+    "domain": "Long Context Understanding",
+    "category": "Information Retrieval",
+    "difficulty": "medium",
+    "test_for": "Comparative Analysis",
+    "prompt": "Read the following comparison of three programming languages:\n\n[BEGIN COMPARISON]\nPython:\n- First Released: 1991\n- Typing: Dynamic, strongly typed\n- Primary Use Cases: Data science, web development, automation, AI/ML\n- Learning Curve: Easy\n- Performance: Moderate (interpreted)\n- Popular Frameworks: Django, Flask, FastAPI, TensorFlow, PyTorch\n- Package Manager: pip\n- Community Size: Very Large\n\nRust:\n- First Released: 2010\n- Typing: Static, strongly typed\n- Primary Use Cases: Systems programming, WebAssembly, CLI tools\n- Learning Curve: Steep\n- Performance: Very High (compiled, zero-cost abstractions)\n- Popular Frameworks: Actix, Rocket, Tokio\n- Package Manager: Cargo\n- Community Size: Growing rapidly\n\nGo:\n- First Released: 2009\n- Typing: Static, strongly typed\n- Primary Use Cases: Cloud services, microservices, DevOps tools\n- Learning Curve: Moderate\n- Performance: High (compiled, garbage collected)\n- Popular Frameworks: Gin, Echo, Fiber\n- Package Manager: go modules\n- Community Size: Large\n[END COMPARISON]\n\nQuestion: Which language was released earliest, which has the steepest learning curve, and which two languages share the same typing system characteristics?"
+  },
+  {
+    "id": "LC_RET_015",
+    "domain": "Long Context Understanding",
+    "category": "Information Retrieval",
+    "difficulty": "hard",
+    "test_for": "Complex Query Resolution",
+    "prompt": "Read the following database of book information:\n\n[BEGIN DATABASE]\nBook ID: B001\nTitle: The Silent Echo\nAuthor: Margaret Chen\nGenre: Mystery\nPages: 342\nPublished: 2019\nRating: 4.2\nAwards: Edgar Award Nominee\n\nBook ID: B002\nTitle: Quantum Dreams\nAuthor: Dr. James Morrison\nGenre: Science Fiction\nPages: 528\nPublished: 2020\nRating: 4.7\nAwards: Hugo Award Winner, Nebula Award Nominee\n\nBook ID: B003\nTitle: The Last Garden\nAuthor: Sarah Williams\nGenre: Literary Fiction\nPages: 286\nPublished: 2018\nRating: 4.5\nAwards: Booker Prize Shortlist\n\nBook ID: B004\nTitle: Code of Shadows\nAuthor: Margaret Chen\nGenre: Mystery\nPages: 398\nPublished: 2021\nRating: 4.4\nAwards: None\n\nBook ID: B005\nTitle: Echoes of Tomorrow\nAuthor: Dr. James Morrison\nGenre: Science Fiction\nPages: 445\nPublished: 2022\nRating: 4.3\nAwards: Hugo Award Nominee\n[END DATABASE]\n\nQuestion: Find all books by authors who have won at least one award. For each qualifying author, list their highest-rated book."
+  },
+  {
+    "id": "LC_RET_016",
+    "domain": "Long Context Understanding",
+    "category": "Information Retrieval",
+    "difficulty": "medium",
+    "test_for": "Sequential Dependency Tracking",
+    "prompt": "Read the following recipe with dependencies:\n\n[BEGIN RECIPE]\nChocolate Lava Cake (Serves 4)\n\nComponents to Prepare:\n\n1. Chocolate Ganache (must be made first, needs 30 min to cool):\n   - 100g dark chocolate\n   - 50ml heavy cream\n   - Melt together, then cool until firm\n\n2. Cake Batter (start while ganache cools):\n   - 200g butter (must be room temperature)\n   - 200g dark chocolate\n   - 4 eggs (must be room temperature)\n   - 100g sugar\n   - 50g flour\n   - Melt butter and chocolate, whisk eggs and sugar, combine, add flour\n\n3. Assembly (ganache must be firm):\n   - Grease 4 ramekins\n   - Fill halfway with batter\n   - Place 1 tbsp firm ganache in center\n   - Cover with remaining batter\n\n4. Baking:\n   - Preheat oven to 200°C (must preheat for 15 min)\n   - Bake for 12-14 minutes\n   - Let rest 1 minute before inverting\n\nTotal Time: 1 hour 15 minutes\n[END RECIPE]\n\nQuestion: If you start at 5:00 PM and want to serve at 6:15 PM, at what time should you start preheating the oven?"
+  },
+  {
+    "id": "LC_RET_017",
+    "domain": "Long Context Understanding",
+    "category": "Information Retrieval",
+    "difficulty": "hard",
+    "test_for": "Multi-Document Synthesis",
+    "prompt": "Read the following three news articles and synthesize the information:\n\n[ARTICLE 1 - Tech Daily, March 1]\nStartup XYZ announced a $50 million Series B funding round led by Venture Capital firm AlphaInvest. The company, founded in 2020 by former Google engineers, has developed an AI-powered supply chain solution.\n\n[ARTICLE 2 - Business Weekly, March 5]\nAlphaInvest partner Sarah Kim stated that XYZ's technology could revolutionize logistics. The startup currently serves 50 enterprise clients and plans to expand to Europe by Q3. CEO John Park mentioned the funds would primarily go toward R&D and hiring.\n\n[ARTICLE 3 - Industry Report, March 10]\nXYZ competitor LogiTech recently filed for bankruptcy, citing market pressures. Industry analysts suggest this creates an opportunity for XYZ to capture LogiTech's 200+ clients. XYZ's valuation is now estimated at $300 million post-funding.\n\nQuestion: Based on all three articles, what is XYZ's current client base, what is their post-funding valuation, and what market opportunity has recently emerged?"
+  },
+  {
+    "id": "LC_RET_018",
+    "domain": "Long Context Understanding",
+    "category": "Information Retrieval",
+    "difficulty": "medium",
+    "test_for": "Rule Application",
+    "prompt": "Read the following employee benefits policy:\n\n[BEGIN POLICY]\nAcme Corp Employee Benefits Policy 2024\n\nVacation Days:\n- 0-2 years tenure: 10 days\n- 3-5 years tenure: 15 days\n- 6-10 years tenure: 20 days\n- 10+ years tenure: 25 days\n\nSick Leave:\n- All employees: 10 days per year\n- Unused sick days: Up to 5 can roll over\n\nRemote Work:\n- Junior (0-2 years): 1 day per week\n- Mid-level (3-5 years): 2 days per week\n- Senior (6+ years): 3 days per week\n- Managers: Flexible arrangement\n\nBonus Eligibility:\n- Must have completed 6 months by December 31\n- Performance rating of 3 or above (out of 5)\n- No disciplinary actions in current year\n\nParental Leave:\n- Primary caregiver: 16 weeks paid\n- Secondary caregiver: 4 weeks paid\n- Must have 1 year tenure to qualify\n[END POLICY]\n\nQuestion: An employee joined on July 1, 2021. It is now January 2024. How many vacation days are they entitled to, how many remote work days per week, and are they eligible for parental leave?"
+  },
+  {
+    "id": "LC_RET_019",
+    "domain": "Long Context Understanding",
+    "category": "Information Retrieval",
+    "difficulty": "hard",
+    "test_for": "Exception Identification",
+    "prompt": "Read the following shipping policy with exceptions:\n\n[BEGIN POLICY]\nGlobal Shipping Policy\n\nStandard Rates:\n- Domestic (USA): $5.99 flat rate, free over $50\n- Canada: $12.99 flat rate, free over $100\n- Europe: $19.99 flat rate, free over $150\n- Asia-Pacific: $24.99 flat rate, free over $200\n- Rest of World: $34.99 flat rate, no free shipping threshold\n\nExceptions:\n1. Oversized items (any dimension > 24 inches): +$15 surcharge, no free shipping\n2. Fragile items: +$8 handling fee\n3. Hazardous materials: Only domestic, +$25 surcharge, no free shipping\n4. Perishables: Only USA and Canada, +$10 cold pack fee\n5. Express shipping: 2x standard rate, reduces thresholds by 50%\n\nCombined Rules:\n- Multiple exceptions stack additively\n- Free shipping threshold applies before surcharges\n- Orders with any 'no free shipping' item make entire order ineligible\n[END POLICY]\n\nQuestion: A customer in Europe orders: a regular $80 item, an oversized $40 item, and a fragile $50 item. Calculate the total shipping cost and explain which exceptions apply."
+  },
+  {
+    "id": "LC_RET_020",
+    "domain": "Long Context Understanding",
+    "category": "Information Retrieval",
+    "difficulty": "medium",
+    "test_for": "State Change Tracking",
+    "prompt": "Read the following inventory transaction log:\n\n[BEGIN LOG]\nProduct: Widget-X | Starting Inventory: 100 units\n\nJan 1: Received shipment +50 units (Total: 150)\nJan 3: Sold 25 units (Total: 125)\nJan 5: Returned 5 units from customer (Total: 130)\nJan 8: Sold 40 units (Total: 90)\nJan 10: Damaged inventory write-off -8 units (Total: 82)\nJan 12: Received shipment +75 units (Total: 157)\nJan 15: Sold 35 units (Total: 122)\nJan 18: Transferred 20 units to Warehouse B (Total: 102)\nJan 20: Received shipment +60 units (Total: 162)\nJan 22: Sold 45 units (Total: 117)\nJan 25: Quality hold -15 units (Total: 102)\nJan 28: Quality hold released +15 units (Total: 117)\nJan 30: Sold 30 units (Total: 87)\n[END LOG]\n\nQuestion: What was the total quantity sold in January, and on which date did the inventory reach its lowest point?"
+  }
+]
