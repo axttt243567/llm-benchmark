@@ -15,6 +15,13 @@ import sys
 import hashlib
 import platform
 import shutil
+import argparse
+
+# Import backend system
+from backends import get_backend, OllamaBackend, TransformersBackend, InferenceBackend
+
+# Global backend instance (set via CLI or auto-detected)
+_backend: InferenceBackend = None
 
 # Configuration
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -130,21 +137,11 @@ def format_response_preview(response, max_lines=3, max_width=70):
 
 
 def get_installed_models():
-    """Runs 'ollama list' to get models dynamically."""
-    try:
-        result = subprocess.run(['ollama', 'list'], capture_output=True, text=True)
-        lines = result.stdout.strip().split('\n')
-        
-        models = []
-        if len(lines) > 1:
-            for line in lines[1:]:
-                parts = line.split()
-                if parts:
-                    models.append(parts[0])
-        return models
-    except Exception as e:
-        print(f"{Colors.RED}Error fetching models: {e}{Colors.RESET}")
-        return []
+    """Get models from the active backend."""
+    global _backend
+    if _backend is None:
+        _backend = get_backend("auto")
+    return _backend.get_available_models()
 
 
 def get_test_history():
@@ -395,10 +392,12 @@ def run_benchmark():
     
     # Prepare metadata
     benchmark_start_time = datetime.datetime.now()
+    backend_info = _backend.get_backend_info() if _backend else {}
     metadata = {
         "run_id": run_id,
         "test_number": current_test_number,
         "model": model_name,
+        "backend": backend_info,
         "dataset": {
             "key": dataset_key,
             "file": dataset_info['file'],
@@ -448,26 +447,13 @@ def run_benchmark():
         error_type = None
         
         try:
-            # Run Ollama
-            process = subprocess.run(
-                ['ollama', 'run', model_name, prompt],
-                capture_output=True,
-                text=True,
-                encoding='utf-8',
-                timeout=300  # 5 minute timeout
-            )
+            # Use pluggable backend for inference
+            result = _backend.generate(model_name, prompt, timeout=300)
             
-            if process.returncode == 0:
-                response_text = process.stdout.strip()
-            else:
-                response_text = f"ERROR: {process.stderr.strip()}"
-                success = False
-                error_type = "OLLAMA_ERROR"
+            response_text = result['response']
+            success = result['success']
+            error_type = result.get('error_type')
 
-        except subprocess.TimeoutExpired:
-            response_text = "ERROR: Response timeout (5 minutes)"
-            success = False
-            error_type = "TIMEOUT"
         except Exception as e:
             response_text = f"SCRIPT ERROR: {str(e)}"
             success = False
@@ -603,8 +589,85 @@ def run_benchmark():
     print(f"\n{Colors.DIM}Thank you for using LLM Benchmark Tool!{Colors.RESET}\n")
 
 
+def parse_args():
+    """Parse command line arguments."""
+    parser = argparse.ArgumentParser(
+        description="LLM Benchmark Tool - Test LLM models with structured datasets",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  python benchmark.py                    # Auto-detect backend (Ollama locally, Transformers on Colab)
+  python benchmark.py --backend ollama   # Force Ollama backend
+  python benchmark.py --backend transformers --use-4bit  # Use Transformers with 4-bit quantization
+  python benchmark.py --backend remote --remote-url http://server:11434  # Remote Ollama server
+        """
+    )
+    
+    parser.add_argument(
+        '--backend', '-b',
+        choices=['auto', 'ollama', 'transformers', 'remote'],
+        default='auto',
+        help='Inference backend to use (default: auto-detect)'
+    )
+    
+    parser.add_argument(
+        '--use-4bit',
+        action='store_true',
+        help='Enable 4-bit quantization for Transformers backend (saves VRAM)'
+    )
+    
+    parser.add_argument(
+        '--device',
+        default='auto',
+        help='Device for Transformers backend: cuda, cpu, or auto (default: auto)'
+    )
+    
+    parser.add_argument(
+        '--max-tokens',
+        type=int,
+        default=512,
+        help='Maximum tokens to generate (default: 512)'
+    )
+    
+    parser.add_argument(
+        '--remote-url',
+        default='http://localhost:11434',
+        help='URL for remote Ollama server (default: http://localhost:11434)'
+    )
+    
+    return parser.parse_args()
+
+
+def init_backend(args):
+    """Initialize the inference backend based on CLI args."""
+    global _backend
+    
+    backend_kwargs = {}
+    
+    if args.backend == 'transformers' or (args.backend == 'auto' and 'google.colab' in str(os.environ.get('COLAB_RELEASE_TAG', ''))):
+        backend_kwargs = {
+            'device': args.device,
+            'use_4bit': args.use_4bit,
+            'max_new_tokens': args.max_tokens
+        }
+    elif args.backend == 'remote':
+        backend_kwargs = {
+            'base_url': args.remote_url
+        }
+    
+    _backend = get_backend(args.backend, **backend_kwargs)
+    
+    # Display backend info
+    info = _backend.get_backend_info()
+    print(f"\n{Colors.CYAN}Backend initialized:{Colors.RESET}")
+    for key, value in info.items():
+        print(f"  {Colors.DIM}{key}: {value}{Colors.RESET}")
+
+
 if __name__ == "__main__":
     try:
+        args = parse_args()
+        init_backend(args)
         run_benchmark()
     except KeyboardInterrupt:
         print(f"\n\n{Colors.YELLOW}Benchmark interrupted by user.{Colors.RESET}")
